@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tabs</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      li {
+        list-style: none;
+      }
+      #tabs ul {
+        display: flex;
+        width: 600px;
+      }
+      #tabs li {
+        margin: 0.2em;
+      }
+      #tabs a {
+        display: block;
+        padding: 1em;
+        background-color: cadetblue;
+      }
+
+      #tabs a.active-menu {
+        background: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="main__title">dom event Handler</h1>
+    <div id="tabs">
+      <ul>
+        <li><a href="#tabs-1" data-role="tab-menu">Nunc tincidunt</a></li>
+        <li><a href="#tabs-2" data-role="tab-menu">Proin dolor</a></li>
+        <li><a href="#tabs-3" data-role="tab-menu">Aenean lacinia</a></li>
+      </ul>
+    </div>
+
+    <script>
+      var tabs = document.querySelectorAll("#tabs a");
+      console.log(tabs);
+      // 현재 active된 메뉴를 담아뒀다가 삭제하고 삽입할 수 있도록 하며
+      // dom 의존적이지 않도록 함
+      var currentMenu;
+
+      function tabClickHandler() {
+        // var activeMenu = document.querySelector(".active-menu");
+        // currentMenu.classList.remove("active-menu");
+
+        // 현재 메뉴만 갱신 되므로 연산 속도가 매우 빠름
+        // 하지만 현재 currentMenu 는 undefined 정도로는 에러 발생하므로
+        // 다음과 같이 개선
+
+        if (currentMenu) {
+          currentMenu.classList.remove("active-menu");
+        }
+        this.classList.add("active-menu");
+        currentMenu = this;
+        // 반드시 현재 클릭된 버튼을 교환해야 함
+      }
+
+      for (var i = 0; i < tabs.length; i++) {
+        //tabs.item(i).addEventListener("click", tabClickHandler);
+        tabs[i].addEventListener("click", tabClickHandler);
+      }
+
+      // 그러나 다음번 예제에서 이벤트 핸들러의 파라미터를 이용한 개선
+    </script>
+  </body>
+</html>

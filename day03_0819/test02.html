@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css()</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        /* header{ width:1200px; height: 70px; margin: auto; }*/
+        /*h1{ line-height: 70px; }*/
+    </style>
+    <!--<script src="../script/jquery-3.6.0.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    $(function(){
+        $('header').html('<h1>굿잡아카데미</h1>');
+        $('header').css('width', '1200px');
+        $('header').css('height', '70px');
+        $('header').css('margin', 'auto');
+        $('header').css('background-color', 'orange');
+        
+        $('h1').css('lineHeight', '70px');
+        
+        /* section은 1000px로 가로세로 지정후 가운데 배치 skyblue */
+        /*$('section').css('width', '1000px');
+        $('section').css('height', '1000px');
+        $('section').css('background-color', 'skyblue');
+        $('section').css('margin', 'auto');*/
+        
+        /* chainning 방법 */
+        $('section').css('width', '1000px')
+            .css('height', '1000px')
+            .css('background-color', 'skyblue')
+            .css('margin', 'auto');
+        
+        /* 배열식 표기법 */
+        $('footer').css({'width':'100%', 'height':'70px', 'background-color':'gray'});
+    })
+    </script>
+</head>
+<body>
+    <header></header>
+    <section></section>
+    <footer></footer>
+</body>
+</html>
+
+

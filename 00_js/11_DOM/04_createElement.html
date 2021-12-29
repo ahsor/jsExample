@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>innerHTML</title>
+    <style>
+      em {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <h1 id="header">목록</h1>
+      <h2>선택할 식료품</h2>
+      <ul>
+        <li id="one" class="hot"></li>
+        <li id="two" class="hot">애플망고</li>
+        <li id="three" class="hot">발사믹식초</li>
+        <li id="four">시금치</li>
+      </ul>
+      <div id="scriptResults"></div>
+    </div>
+    <script>
+      // createElement()  요소생성하지만 dom 추가한 상태는 아님
+      // createTextNode() 텍스트 노드를 생성하지만 추가된 상태는 아님
+      // appendChild() dom에 요소 추가
+      // insertBefore() 새로운 요소를 dom 앞에 추가
+
+      var newEl = document.createElement("li");
+      var newText = document.createTextNode("퀴노아");
+      newEl.appendChild(newText);
+      console.log(newEl);
+
+      // 요소 생성 -> 추가
+      var addEl_1 = document.getElementsByTagName("ul")[0];
+      addEl_1.appendChild(newEl);
+
+      // 요소 생성 -> 추가
+      newText = document.createTextNode("랜즈콩");
+      newEl = document.createElement("li");
+      newEl.appendChild(newText);
+
+      var addEl_2 = document.querySelector("ul");
+      addEl_2.appendChild(newEl);
+    </script>
+  </body>
+</html>

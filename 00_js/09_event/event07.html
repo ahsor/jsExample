@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tabs</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      li {
+        list-style: none;
+      }
+      #tabs ul {
+        display: flex;
+        width: 600px;
+      }
+      #tabs li {
+        margin: 0.2em;
+      }
+      #tabs a {
+        display: block;
+        padding: 1em;
+        background-color: cadetblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="main__title">dom event Handler</h1>
+    <div id="tabs">
+      <ul>
+        <li><a href="#tabs-1" data-role="tab-menu">Nunc tincidunt</a></li>
+        <li><a href="#tabs-2" data-role="tab-menu">Proin dolor</a></li>
+        <li><a href="#tabs-3" data-role="tab-menu">Aenean lacinia</a></li>
+      </ul>
+    </div>
+
+    <script>
+      var tabs = document.querySelectorAll("#tabs a");
+      console.log(tabs);
+
+      function tabClickHandler() {
+        for (var i = 0; i < tabs.length; i++) {
+          tabs.item(i).style.background = "cadetblue";
+        }
+        this.style.background = "orange";
+
+        /*  
+            for (var i = 0; i < tabs.length; i++) {
+                tabs.item(i).remove('tab-active');
+            }
+            this.classList.add('tab-active');
+
+            // jQuery를 javascript로 돌린 방법으로 tab에서는 상관 없지만
+            // 메뉴가 많으면 문제가 될 수 있음 
+            // for문으로 쓸때없이 여러 연산을 도는 방법은 연산속도가 느리다. 
+            // 다음번 예제에서 개선 
+        */
+      }
+
+      //  tabs.addEventListener("click", tabClickHandler);
+      //  모든 tabs a에 click 이벤트 적용
+      for (var i = 0; i < tabs.length; i++) {
+        //tabs.item(i).addEventListener("click", tabClickHandler);
+        tabs[i].addEventListener("click", tabClickHandler);
+      }
+    </script>
+  </body>
+</html>

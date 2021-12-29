@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css()</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        header{ width:1200px; height: 70px; margin: auto; 
+            background-color: orange; 
+        }
+         h1{ line-height: 70px; }
+        section{ width:1000px; height: 1000px; 
+            background-color: skyblue; 
+            margin: auto; 
+        }
+        footer{ width:100%; height: 70px; background-color: gray; }
+    </style>
+    <!--<script src="../script/jquery-3.6.0.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    $(function(){
+        $('header').click(function(){
+            $('header').html('<h1>굿잡아카데미</h1>');
+            //$(this) == header
+        })
+        $('section').click(function(){
+            $('section').after('<aside> aside </aside>')
+            .css('background-color', 'pink');
+            // $(this) == section
+        })
+        $('footer').click(function(){
+            $(this).append('<address>email@naver.com</address>')
+            .css({ 'text-align':'center', 'line-height':'70px'});
+        })
+    })
+    </script>
+</head>
+<body>
+    <header></header>
+    <section></section>
+    <footer></footer>
+</body>
+</html>
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tabs</title>
+    <style>
+      .thisLink {
+        color: red;
+      }
+      .active {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="tabs">
+      <ul>
+        <li><a href="#tabs-1" class="thisLink">Nunc tincidunt</a></li>
+        <li><a href="#tabs-2">Proin dolor</a></li>
+        <li><a href="#tabs-3">Aenean lacinia</a></li>
+      </ul>
+    </div>
+    <script>
+      var li = document.createElement("li");
+      console.log(li);
+      li.innerHTML = "jemicom";
+      //error : 만들었으나 삽입은 되지 않은 상태
+      //03_innerHTML.html 파일에서도 error 확인
+
+      var ul = document.querySelector("ul");
+      //ul.append(li);
+      ul.appendChild(li);
+      // append 와 appendChild 차이점
+    </script>
+  </body>
+</html>

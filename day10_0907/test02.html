@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <style>
+    section{ height: 1000px; width: 100%;
+      background-size: cover;  text-align: center;
+      line-height: 1000px;
+    }
+    section:nth-child(1){ background-color: orange;
+      background-image: url(http://placekitten.com/1920/1000);
+    }
+    section:nth-child(2){ background-color: blue;
+      background-image: url(http://placekitten.com/1920/1001);
+    }
+    section:nth-child(3){ background-color: blueviolet;
+      background-image: url(http://placekitten.com/1920/1002);
+    }
+    section:nth-child(4){ background-color: burlywood;
+      background-image: url(http://placekitten.com/1920/1003);
+    }
+
+    header{ position: fixed; left:100px; top:50%; 
+      transform: translateY(-50%);
+    }
+    .navi a{ display: block; width: 30px; height: 30px; 
+      border: 5px solid black ; font-size: 0; margin: 2px;}
+    .navi a:hover{    background-color: orange; }
+    .navi a.active{    background-color: orange; }
+
+  </style>
+</head>
+<body>
+  <section id="section01"><h2> Section01 </h2></section>
+  <section id="section02"><h2> Section02 </h2></section>
+  <section id="section03"><h2> Section03 </h2></section>
+  <section id="section04"><h2> Section04 </h2></section>
+  <header>
+    <h2>FullPage</h2>
+    <nav class="navi">
+      <ul>
+        <li><a href="#section01" class="active"> Section01 </a></li>
+        <li><a href="#section02"> Section02 </a></li>
+        <li><a href="#section03"> Section03 </a></li>
+        <li><a href="#section04"> Section04 </a></li>
+      </ul>
+    </nav>
+  </header> 
+  <script src="../script/jquery-3.6.0.min.js"></script>
+  <script src="../script/jquery-ui.min.js"></script>
+  <script src="../script/jquery.mousewheel.min.js"></script>
+  <script>
+    $(function(){
+      $('section').on('mousewheel', function(event) {
+          // 부드러운 마우스 휠 이동 
+          console.log(event.deltaX, event.deltaY, event.deltaFactor);
+          // event.deltaY -1 휠다운, +1 휠업
+
+          var st = 0; 
+          if(event.deltaY>0){
+            // 이전 섹션으로 이동 // 현재 section02이라면 section01
+            st = $(this).prev().offset().top; 
+            // 현재 이동한 section의 이전 section의 top
+          }else if( event.deltaY<0 ){
+            // 이후 섹션으로 이동 // 현재 section02이라면 section03
+            st = $(this).next().offset().top; 
+            // 현재 이동한 section의 다음 section의 top
+          }
+          $('html, body').stop().animate({ 'scrollTop': st});
+      });
+
+      /*
+      $('#my_elem').mousewheel(function(event) {
+          console.log(event.deltaX, event.deltaY, event.deltaFactor);
+      });
+      */ 
+
+
+
+        // $('html, body').stop().animate({'scrollTop': 0});
+        $(window).scrollTop(0);
+        // 페이지를 리로드할때마다 항상 0위치에 둠 
+
+        $('.navi a').click(function(){
+            var num = $(this).parent().index();
+            var st = $('section').eq(num).offset().top;
+
+            $('html, body').stop().animate({'scrollTop': st});
+
+            $('.navi a').removeClass('active');
+            $(this).addClass('active');
+        })
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <style>
+        body{ overflow-y:scroll; }
+       
+    </style>
+    <script src="../script/jquery-3.6.0.js"></script>
+    <script src="../script/jquery-ui.js"></script>
+    <script>
+    $(function(){
+        function bgColor( n ){
+            $(n).css({'background-color':'orange'});
+        }
+        
+        $('li').click(function(){
+            bgColor($(this));
+        })
+        $('h1').click(function(){
+            bgColor( $(this));
+        })
+        
+    })
+    </script>
+</head>
+<body>
+    <h1> 나도 바꿔주세요. </h1>
+    <ul>
+        <li>BOX1</li>
+        <li>BOX2</li>
+        <li>BOX3</li>
+        <li>BOX4</li>
+        <li>BOX5</li>
+        <li>BOX6</li>
+        <li>BOX7</li>
+        <li>BOX8</li>
+        <li>BOX9</li>
+        <li>BOX10</li>
+    </ul>
+</body>
+</html>
+
+
+
+

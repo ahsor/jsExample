@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .box{ width:200px; height: 200px; background-color: skyblue;
+            margin:50px; border: 0px solid black; 
+        }
+       /* transition-duration 속성과 충돌 주의 */
+    </style>
+    <script src="../script/jquery-3.6.0.js"></script>
+    <script>
+    $(function(){
+      $('.width').click(function(){
+          $('.box').animate({ 'width':400}, 2000)
+      })
+      $('.height').click(function(){
+          $('.box').animate({ 'height':400}, 'slow')
+      })
+      $('.opacity').click(function(){
+          $('.box').animate({ 'opacity':.4}, 5000)
+      })
+        
+    })
+    </script>
+</head>
+<body>
+    <!--
+        css( 'opacity':0 ) + transition-duration
+        => animate({속성:숫자값, ...}, speed, easing, callback)
+        1s    = 1000
+        speed = 400
+        'fast' = 200
+        'slow' = 600 
+        3s =    3000
+    -->
+    
+    <button class="width"> width </button>
+    <button class="height"> height </button>
+    <button class="opacity"> opacity </button>
+    <div class="box">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo sed eaque dolores ducimus vel placeat animi, vero tempora veritatis, magnam reprehenderit pariatur incidunt, voluptates recusandae architecto repellendus tenetur? Repudiandae, ducimus.
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

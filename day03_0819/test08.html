@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        header{ width: 1000px; margin: auto; display: flex; 
+            flex-wrap: wrap; justify-content: space-between; 
+        }
+        .lnb ul{ display: flex; }
+        /*.lnb li{ float:left; }*/
+        .lnb a{ display: block; padding: 1em; }
+        .panel{ width:1000px; display: none;  }
+        .panel ul{ width:14.2%; float:left; }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>굿잡아카데미</h1>
+        <nav class="lnb">
+            <ul>
+                <li><a href="#">사전</a></li>
+                <li><a href="#">뉴스</a></li>
+                <li><a href="#">증권</a></li>
+                <li><a href="#">부동산</a></li>
+                <li><a href="#">더보기</a></li>
+            </ul>
+        </nav>
+        <div class="panel">
+            <ul>
+                <li><a href="#">날씨1</a></li>
+                <li><a href="#">마이카</a></li>
+                <li><a href="#">게</a></li>
+                <li><a href="#">예약</a></li>
+                <li><a href="#">프리미엄콘텐츠</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">날씨2</a></li>
+                <li><a href="#">마이카</a></li>
+                <li><a href="#">게</a></li>
+                <li><a href="#">예약</a></li>
+                <li><a href="#">프리미엄콘텐츠</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">날씨3</a></li>
+                <li><a href="#">마이카</a></li>
+                <li><a href="#">게</a></li>
+                <li><a href="#">예약</a></li>
+                <li><a href="#">프리미엄콘텐츠</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">날씨4</a></li>
+                <li><a href="#">마이카</a></li>
+                <li><a href="#">게</a></li>
+                <li><a href="#">예약</a></li>
+                <li><a href="#">프리미엄콘텐츠</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">날씨5</a></li>
+                <li><a href="#">마이카</a></li>
+                <li><a href="#">게</a></li>
+                <li><a href="#">예약</a></li>
+                <li><a href="#">프리미엄콘텐츠</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">날씨6</a></li>
+                <li><a href="#">마이카</a></li>
+                <li><a href="#">게</a></li>
+                <li><a href="#">예약</a></li>
+                <li><a href="#">프리미엄콘텐츠</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">날씨7</a></li>
+                <li><a href="#">마이카</a></li>
+                <li><a href="#">게</a></li>
+                <li><a href="#">예약</a></li>
+                <li><a href="#">프리미엄콘텐츠</a></li>
+            </ul>
+            
+        </div>
+    </header>
+   
+    <script src="../script/jquery-3.6.0.js"></script>
+    <script>
+    $(function(){
+       var ctrl = true; 
+        
+       $('.lnb li:last-child a').click(function(){
+           $('.panel').fadeToggle(10);
+           //console.log('1. ', ctrl );
+           
+           if( ctrl ){
+               $(this).text('접기');
+               ctrl = false; 
+               console.log( '2. ', ctrl );
+           }else{
+               $(this).text('더보기');
+               ctrl = true; 
+               console.log( '3. ', ctrl );
+           }
+           /*
+           $(this).text('접기');
+           // javascript 
+           if(조건식){
+                조건식 결과가  true일때 처리할 일; 
+           }else{
+                조건식 결과가  false일때 처리할 일; 
+           }
+           */
+       })
+    })
+    </script>
+</body>
+</html>
+
+
+
+
+
+

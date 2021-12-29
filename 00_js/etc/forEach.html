@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       var person = [{name:'kim', age:30}, {name:'hong', age:40}];
+       var ageAdd = function(a, b){
+           return a+b; 
+       }
+       person.push(ageAdd);
+       console.log( '배열 함수 출력', person[2](10, 10))
+
+       person.forEach(function(person, index){
+            console.log( person.name, person.age);
+            // 인덱스 2은 객체가 아니므로 forEach 돌아갈 수 없어 Error
+       })
+       
+       person.forEach(function(item, index){
+            console.log(index, item.name, item.age);
+       })
+
+    </script>
+</body>
+</html>

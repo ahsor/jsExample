@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>innerHTML</title>
+    <style>
+      em {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <h1 id="header">목록</h1>
+      <h2>선택할 식료품</h2>
+      <ul>
+        <li id="one" class="hot"></li>
+        <li id="two" class="hot">애플망고</li>
+        <li id="three" class="hot">발사믹식초</li>
+        <li id="four">시금치</li>
+      </ul>
+      <div id="scriptResults"></div>
+    </div>
+    <script>
+      // 요소노드는 모두 innerHTML 속성을 가지고 있고 콘텐츠 조회및 수정 가능(String클래스 필요)
+      // 모든 콘텐츠를 제거하려면 innerHTML에 빈 문자열 대입
+      /*
+      var item = "<em>신선한</em>무화과";
+      var modifyItem = document.getElementById("one").innerHTML;
+      // 오류 발생 
+      modifyItem = "<em>신선한</em>무화과";
+      // 다음 코드로 변경해야 함 
+      */
+      document.getElementById("one").innerHTML = "<em>신선한</em>무화과";
+    </script>
+  </body>
+</html>

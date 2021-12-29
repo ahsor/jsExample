@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        dl{ width: 600px; }
+        dt{ border:1px solid lightgray; background-color: lightgrey;}
+        dd{ overflow:hidden; height: 150px; }
+    </style>
+    <script src="../script/jquery-3.6.0.min.js"></script>
+    <script>
+    $(function(){
+        $('dd').animate({'height':0}, 10);
+        $('dt:nth-child(1)').next().animate({'height':'150px'}, 400, 'easeInCirc');
+        
+        $('dt').click(function(){
+            $('dd').animate({'height':0}, 10);
+            $(this).next().animate({'height':'150px'}, 400, 'easeInCirc');
+        })
+    })
+    </script>
+</head>
+<body>
+    <dl class='accordion'>
+        <dt>section01</dt>
+        <dd>01Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, omnis quibusdam quo cupiditate. Expedita et optio minima consectetur vero ipsum, repellat rem officia iure enim cum, eveniet, aliquid aperiam id?</dd>
+        <dt>section02</dt>
+        <dd>02Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, omnis quibusdam quo cupiditate. Expedita et optio minima consectetur vero ipsum, repellat rem officia iure enim cum, eveniet, aliquid aperiam id?</dd>
+        <dt>section03</dt>
+        <dd>03Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, omnis quibusdam quo cupiditate. Expedita et optio minima consectetur vero ipsum, repellat rem officia iure enim cum, eveniet, aliquid aperiam id?</dd>
+        <dt>section04</dt>
+        <dd>04Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, omnis quibusdam quo cupiditate. Expedita et optio minima consectetur vero ipsum, repellat rem officia iure enim cum, eveniet, aliquid aperiam id?</dd>
+        
+    </dl>
+</body>
+</html>

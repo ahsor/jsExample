@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    
+</head>
+<body>
+    <h1> jQuery </h1>
+    <div>
+        javascript로 만들어진 도구(부품) : 프레임워크 , 라이브러리 <br>
+        jQuery.js : 라이브러리, 자바스크립트 함수<br>
+        node.js<br>
+        react.js<br>
+        vue.js<br>
+        angular.js<br>
+        ....
+    </div>
+    <div id="content"></div>
+    <div class="content"></div>
+    <div class="content"></div>
+    <div class="content"></div>
+    
+    <script src="../script/jquery-3.6.0.js"></script>
+    <script>
+      $(function(){
+          //jQuery 명령 사용 가능 
+          //document.getElementById('content').innerHTML = '아이디';
+          $('#content').html('아이디');
+          //document.getElementsByClassName('content')[0].innerHTML = '클래스';
+          $('.content').html('클래스');
+          //document.getElementsByTagName('h1')[0].innerHTML = '제목';
+          $('h1').html('제목');
+          // 명령어가 매우 짧아짐 
+          
+          // 누구를 처리하라
+          // 선택자=selector, function=함수=메소드=할일
+      }) 
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

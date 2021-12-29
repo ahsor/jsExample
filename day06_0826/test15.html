@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class제어</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <style>
+        body{ overflow-y:scroll; }
+        aside{ position: fixed;  right:0; top:0; height: 100vh; 
+            width: 300px; background-color: skyblue; 
+        }
+        aside button{ padding:1em; position: absolute; 
+            transform: translate(-100%, -50%); top:50%;
+        }
+        .close{ right:-300px; }
+    </style>
+    <script src="../script/jquery-3.6.0.js"></script>
+    <script src="../script/jquery-ui.js"></script>
+    <script>
+    $(function(){
+        $('button').click(function(){
+            //$('aside').toggleClass('close');
+            
+            /*
+            if( $('aside').hasClass('close') ){
+                $('aside').removeClass('close');
+                $('button').text('닫기');
+            }else{
+                $('aside').addClass('close');
+                $('button').text('열기');
+            }
+            */
+            
+            if( !$('aside').hasClass('close') ){
+                // !true = false
+                // !false = true
+                $('aside').addClass('close');
+                $('button').text('열기');
+            }else{
+                $('aside').removeClass('close');
+                $('button').text('닫기');
+            }
+        })
+        
+    })
+    </script>
+</head>
+<body>
+   <aside><button> 닫기 </button></aside>
+</body>
+</html>
+
+
+
+

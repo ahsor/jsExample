@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>쓰기와관련된함수</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        div{ border:1px solid black; margin-bottom: 1em; 
+            padding: 1em; 
+        }
+    </style>
+    <script src="../script/jquery-3.6.0.js"></script>
+    <script>
+    $(function(){
+        $('#htmlWrite').html('html길동');
+        $('#textWrite').text('text길동');
+        $('.htmlWrite').html('<b><i>html길동</i></b>');
+        $('.textWrite').text('<b><i>text길동</i></b>');
+        $('.textWrite').text('<b><i>덮어쓰기</i></b>');
+        $('#appendWrite').append('<b> 기존의 데이터 뒤에 삽입 </b>');
+        $('#prependWrite').prepend('<b> 기존의 데이터 앞에 삽입 </b>');
+        $('#afterWrite').after('<b>after</b>');
+        $('#beforeWrite').before('<b>before</b>');
+    })
+    </script>
+</head>
+<body>
+    <div id="htmlWrite"></div>
+    <div id="textWrite"></div>
+    <div class="htmlWrite"></div>
+    <div class="textWrite"></div>
+    
+    <div id="appendWrite">middle</div>
+    <div id="prependWrite">middle</div>
+    <div id="afterWrite">middle</div>
+    <div id="beforeWrite">middle</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

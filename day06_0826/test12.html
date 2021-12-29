@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class제어</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <style>
+        body{ overflow-y:scroll; }
+        button{ padding: 1em; }
+        .bg{ background-color: red; }
+        .border{ border:5px solid orange; }
+        .opacity{ opacity: 0; }
+        div{ width:300px; height: 300px; 
+            border:1px dotted blue; 
+        }
+    </style>
+    <script src="../script/jquery-3.6.0.js"></script>
+    <script src="../script/jquery-ui.js"></script>
+    <script>
+    $(function(){
+        /*
+        class제어 
+        .addClass('클래스명') // 클래스 추가 
+        .removeClass('클래스명') // 클래스 제거
+        .toggleClass('클래스명')
+        .hasClass('클래스명')
+        */
+        $('button').eq(0).click(function(){
+            $('div').addClass('bg');
+        })
+        $('button').eq(1).click(function(){
+            $('div').removeClass('bg');
+        })
+        $('button').eq(3).click(function(){
+            $('div').removeClass('border');
+        })
+        $('button').eq(2).click(function(){
+            $('div').addClass('border');
+        })
+        $('button').eq(4).click(function(){
+            $('div').addClass('opacity');
+        })
+        $('button').eq(5).click(function(){
+            $('div').removeClass('opacity');
+        })
+        
+    })
+    </script>
+</head>
+<body>
+   <button> add bg </button>
+   <button> remove bg </button>
+   <button> add border </button>
+   <button> remove border </button>
+   <button> add opacity </button>
+   <button> remove opacity </button>
+    <div></div>
+</body>
+</html>
+
+
+
+

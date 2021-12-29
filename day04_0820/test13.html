@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>accordion-hor</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .accordion{ width:800px; margin: 100px; border:1px solid #aaa;
+            border-radius: 5px; overflow: hidden; 
+            display: flex; 
+        }
+        .title{ background:linear-gradient(90deg, gray, #00ffff);
+            color:#fff; 
+            width:50px; height: 600px;
+        }
+        .title span{ display: block; transform: rotate(90deg);
+            transform-origin: left bottom;
+        }
+        .content{ width:calc( 800px - 150px );
+            padding:1em; height: 600px; overflow: hidden; 
+            transition:0.4s; position: relative; 
+        } 
+        .content2{    width:0;    padding:0;   }
+        .content3{    width:0;    padding:0;   }
+        .box{ position: absolute; width:calc( 800px - 200px );
+            left: 1em; top:1em; 
+        }
+    </style>
+    <script src="../script/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="accordion">
+        <div class="title"><span>accordion Title1</span></div>
+        <div class="content content1"> <div class="box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint maiores laudantium temporibus aut, rerum praesentium magni assumenda facere. Error, itaque sequi, debitis ullam deserunt distinctio quod nemo a impedit totam.</div></div>
+        <div class="title"><span>accordion Title2</span></div>
+        <div class="content content2"> <div class="box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint maiores laudantium temporibus aut, rerum praesentium magni assumenda facere. Error, itaque sequi, debitis ullam deserunt distinctio quod nemo a impedit totam.</div></div>
+        <div class="title"><span>accordion Title3</span></div>
+        <div class="content content3"> <div class="box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint maiores laudantium temporibus aut, rerum praesentium magni assumenda facere. Error, itaque sequi, debitis ullam deserunt distinctio quod nemo a impedit totam.</div></div>
+        
+    </div>
+    <script>
+    $(function(){
+        /*
+        가로 아코디언은 slideUp()/slideDown()을 사용할 수 없음
+        jQuery에서 순회( css에서 동생, 자식 선택, jQuery형 또는 부모도 선택가능)
+        .next() .nextAll()
+        .prev() .prevAll()
+        .sibilings() 
+        */
+        
+        $('.title').click(function(){
+            $('.content').css({ 'width':0, 'padding':0});
+            $(this).next().css({ 'width': 'calc(800px - 150px)', 'padding':'1em' , 'height':'600px' })
+        })
+                
+    })
+    </script>
+</body>
+</html>
+
+
+
+

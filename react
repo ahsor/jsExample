@@ -1,0 +1,9 @@
+1. 웹사이트가 바뀌면 자동으로 업데이트 
+2. 재사용을 많이 할 수 있음 
+3. 코드 정리도 깔끔함 ( html + javascript = jsx )
+4. SPA ( sing page application ) 
+   웹페이지는 index.html 페이지 한개
+
+
+1. "Hello World" 출력하기
+2.    

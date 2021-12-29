@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>이벤트</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <style>
+      div {
+        border: 1px solid black;
+        margin-bottom: 1em;
+        padding: 1em;
+        margin: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div>이벤트</div>
+    <script>
+      /*
+      document.querySelector("div").addEventListener("click", function () {
+        this.innerHTML = "mouse clicked";
+      });
+      */
+      var div = document.querySelector("div");
+      div.addEventListener("mouseover", function () {
+        this.innerHTML = "mouse overed";
+      });
+
+      div.addEventListener("mouseout", function () {
+        this.innerHTML = "mouse outed";
+      });
+    </script>
+    <script>
+      /*
+        $("div").click(function () {
+          $("div").html("마우스를 클릭하였습니다.");
+        });
+
+        $("div").mouseenter(function () {
+          $("div").html("마우스 enter");
+        });
+
+        $("div").mouseleave(function () {
+          $("div").html("마우스 leave");
+        });
+
+        $("div").mouseover(function () {
+          $("div").html("마우스 오버");
+        });
+
+        $("div").mouseout(function () {
+          $("div").html("마우스 아웃");
+        });
+      });
+      */
+    </script>
+  </body>
+</html>

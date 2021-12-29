@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{ position: absolute;
+            margin: 100px;
+            background-color: orange;
+            width: 200px; height: 200px;
+            padding: 10px; border:10px; 
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        const ob = document.querySelector('.box').getBoundingClientRect();
+        console.log( ob );
+        // padding, border를 포함함 width, height 반환
+    </script>
+</body>
+</html>

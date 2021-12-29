@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="./slick/slick.css">
+  <link rel="stylesheet" href="./slick/slick-theme.css">
+  <style>
+    body{ background-color: skyblue;  }
+  
+    .smallSlider{ width: 600px; height: 300px; margin: auto;}
+    .smallSlider li{ width:200px; height: 300px; overflow: hidden;}
+
+  </style>
+</head>
+<body>
+  <div class="smallSlider">
+    <ul class="box-slider">
+      <li><img src="http://placekitten.com/200/300" alt=""></li>
+      <li><img src="http://placekitten.com/200/301" alt=""></li>
+      <li><img src="http://placekitten.com/201/302" alt=""></li>
+      
+      <li><img src="http://placekitten.com/200/303" alt=""></li>
+      <li><img src="http://placekitten.com/200/304" alt=""></li>
+      <li><img src="http://placekitten.com/201/305" alt=""></li>
+      
+      <li><img src="http://placekitten.com/200/306" alt=""></li>
+      <li><img src="http://placekitten.com/200/307" alt=""></li>
+      <li><img src="http://placekitten.com/201/308" alt=""></li>
+      
+    </ul>
+  </div>
+
+  <script src="../script/jquery-3.6.0.min.js"></script>
+  <script src="./slick/slick.min.js"></script>
+  <script>
+    $(function(){
+      $('.box-slider').slick({
+          autoplay:true,
+          autoplaySpeed:3000,
+          slidesToShow: 3,
+          slidesToScroll: 3
+      });
+
+
+    })
+
+  </script>
+</body>
+</html>

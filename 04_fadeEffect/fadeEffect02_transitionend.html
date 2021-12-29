@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .carousel-container{ width: 600px; height: 400px; overflow: hidden;
+                position: relative;
+        }
+        .carousel-slide{ width:100%; height: 100%; position: relative;}
+        .carousel-slide>img{ position:absolute; opacity: 1;
+            /* transition: 1s; */
+        }
+        .carousel-slide>img.active{ opacity: 1;}
+        .carousel-slide>img:nth-child(1){ 
+            animation-name:fader; 
+            animation-delay: 4s;
+            animation-duration: 0.4s;
+            z-index: 20;
+        }
+        
+        .carousel-slide>img:nth-child(2){ 
+            z-index: 10;
+        }
+        .carousel-slide>img:nth-child(n+3){ 
+            display: none;
+        }
+        @keyframes fader {
+            from{ opacity: 1;}
+            to{opacity: 0;}
+        }
+        .indecator{  position: absolute; bottom: 30px; width:100%; }
+        .indecator ul{ display: flex; width: 100%; justify-content: center;}
+        .indecator a{ display: block; width: 20px; height: 20px; 
+            background: chartreuse; margin:5px;}
+        .indecator a.active{ background: black; color:#fff; }
+
+
+    </style>
+</head>
+<body>
+    <h1>fade Effect Gallery</h1>
+    <hr />
+    <div class="carousel-container">
+      <div class="carousel-slide">
+        <img src="http://placekitten.com/600/450" alt=""/>
+        <img src="http://placekitten.com/600/411" alt="" />
+        <img src="http://placekitten.com/600/432" alt="" />
+        <img src="http://placekitten.com/600/443" alt="" />
+        <img src="http://placekitten.com/600/404" alt="" />
+      </div>
+
+      <div class="control">
+          <button id="prevBtn">Prev</button>
+          <button id="nextBtn">Next</button>
+        </div>
+      <div class="indecator">
+        <ul>
+          <li><a href="#" class="active">0</a></li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+        </ul>
+      </div>
+    </div>
+    <script>
+        const stage = document.querySelector('.carousel-slide');
+        const arr = document.querySelectorAll('.carousel-slide img');
+        let fade = function(){
+            stage.appendChild(arr[0]);
+        }
+        for(let i=0; i< arr.length ; i++){
+            arr[i].addEventListener('animationend', fade, false);
+        }
+
+        
+
+    </script>
+</body>
+</html>

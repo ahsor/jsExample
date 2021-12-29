@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>innerHTML</title>
+    <style>
+      em {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <h1 id="header">목록</h1>
+      <h2>선택할 식료품</h2>
+      <ul>
+        <li id="one" class="hot"><em>신선한</em>무화과</li>
+        <li id="two" class="hot">애플망고</li>
+        <li id="three" class="hot">발사믹식초</li>
+        <li id="four">시금치</li>
+      </ul>
+      <div id="scriptResults"></div>
+    </div>
+    <script>
+      // 제거할 부모 요소 변수에 저장
+      // parentNode를 이용하여 부모를 찾은 것이 효율적임, 실수를 줄일 수 있음
+      // removeChild() 지정한 요소 제거
+      // dom 제거시 모든 자식 요소를 제거되면 NodeList 인덱스 번호로 영향 받음
+      var one = document.getElementById("one");
+      var em = document.getElementsByTagName("em")[0];
+      console.log(one);
+      console.log(em);
+      one.removeChild(em);
+
+      var ul = document.getElementsByTagName("ul")[0];
+      var li = document.getElementsByTagName("li");
+      console.log(li.length);
+      /*
+      for (var a = 0; a <= li.length; a++) {
+        ul.removeChild(li[a]);
+      }
+      error : 첫번째 데이터를 지우면 인덱스도 변하므로 짝수 데이터가 남는다.
+      또한 li.length는 실시간으로 변경되므로 li.length 사이즈는 불면이 필요
+      */
+
+      const liLength = li.length;
+      for (var a = 0; a < liLength; a++) {
+        console.log("a", a, "li", li[0]);
+        ul.removeChild(li[0]);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .btn{ display: flex; }
+        .btn li{ }
+        .btn a{ display: block; height: 40px; line-height: 40px;
+            width:200px; border:1px solid black; text-align: center;
+        }
+        /* 웹접근성 : 글씨만 클릭해야하면 불편, 
+                    -> 버튼 어디를 클릭해도 클릭 되도록 구현 
+        */
+        .panels{ position: relative; }
+        .panels>li{ position: absolute; width: 800px; height: 400px; }
+        .panels>li:nth-child(1){ background-color: skyblue; }
+        .panels>li:nth-child(2){ background-color: orange; }
+        .panels>li:nth-child(3){ background-color: yellow; }
+        .panels>li:nth-child(4){ background-color: green; }
+    </style>
+    <script src="../script/jquery-3.6.0.min.js"></script>
+    <script src="../script/jquery-ui.min.js"></script>
+    <script>
+    $(function(){
+        $('#tabPanels').tabs();
+    })
+    </script>
+</head>
+<body>
+    <div id="tabPanels">
+        <ul class="btn">
+            <li><a href="#panel01">btn1</a></li>
+            <li><a href="#panel02">btn2</a></li>
+            <li><a href="#panel03">btn3</a></li>
+            <li><a href="#panel04">btn4</a></li>
+        </ul>
+        <ul class="panels">
+            <li id="panel01">PENEL01</li>
+            <li id="panel02">PENEL02</li>
+            <li id="panel03">PENEL03</li>
+            <li id="panel04">PENEL04</li>
+        </ul>
+    </div>
+</body>
+</html>

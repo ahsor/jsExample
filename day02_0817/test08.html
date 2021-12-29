@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>탭패널</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .tabs{ width:610px; margin: 100px; display: flex; 
+            flex-direction: row-reverse;
+        }
+        .tab{ display: flex; flex-direction: column; }
+        .tab li{ width: 100px; border:1px solid black; 
+            text-align: center; line-height: 40px;
+            border-left:none; margin-bottom: 1px;
+        }
+        .tab li:last-child{ border-right: 1px solid black; }
+        
+        .panels{ position: relative; width:500px; height: 300px; }
+        .panels>div{ width:500px; height: 300px; position: absolute;
+            display: none; 
+        }
+        .panels>div:nth-child(1){ background-color: black; display: block; }
+        .panels>div:nth-child(2){ background-color: orange; }
+        .panels>div:nth-child(3){ background-color: yellow; }
+        
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <ul class="tab">
+            <li class="tab01">상품</li>
+            <li class="tab02">쇼핑몰</li>
+            <li class="tab03">MEN</li>
+        </ul>
+        <div class="panels">
+            <div class="panel panel01">상품</div>
+            <div class="panel panel02">쇼핑몰</div>
+            <div class="panel panel03">MEN</div>
+        </div>
+        
+    </div>
+    
+    
+    <script src="../script/jquery-3.6.0.min.js"></script>
+    <script>
+    $(function(){
+        $('.tab li:nth-child(1)').click(function(){
+            $('.panels>div:nth-child(1)').css('display','block');
+            $('.panels>div:nth-child(2)').css('display','none');
+            $('.panels>div:nth-child(3)').css('display','none');
+            // $('.panel:nth-child(3)').css('display','none');
+        })
+        $('.tab li:nth-child(2)').click(function(){
+            $('.panels>div:nth-child(1)').css('display','none');
+            $('.panels>div:nth-child(2)').css('display','block');
+            $('.panels>div:nth-child(3)').css('display','none');
+        })
+        $('.tab li:nth-child(3)').click(function(){
+            $('.panels>div:nth-child(1)').css('display','none');
+            $('.panels>div:nth-child(2)').css('display','none');
+            $('.panels>div:nth-child(3)').css('display','block');
+        })
+        
+        /*$('.tab01').click(function(){
+            $('.panel01').css('display', 'block');
+            $('.panel02').css('display', 'none');
+            $('.panel03').css('display', 'none');
+        })
+        
+        $('.tab02').click(function(){
+            $('.panel01').css('display', 'none');
+            $('.panel02').css('display', 'block');
+            $('.panel03').css('display', 'none');
+        })
+        
+        $('.tab03').click(function(){
+            $('.panel01').css('display', 'none');
+            $('.panel02').css('display', 'none');
+            $('.panel03').css('display', 'block');
+        })*/
+    })
+    </script>
+</body>
+</html>

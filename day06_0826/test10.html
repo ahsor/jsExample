@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <style>
+        body{ overflow-y:scroll; }
+        button{ padding: 1em; }
+    </style>
+    <script src="../script/jquery-3.6.0.js"></script>
+    <script src="../script/jquery-ui.js"></script>
+    <script>
+    $(function(){
+        function btnColor( btnBgColor ){ // bbc 
+            $('body').css({'background-color':btnBgColor});
+        }
+        
+        $('button').click(function(){
+            var bbc = $(this).text(); // 
+            console.log( bbc );
+            btnColor( bbc );
+        })
+              
+        /*
+        function text(){
+            return text;
+        }
+        */
+    })
+    </script>
+</head>
+<body>
+    <button>red</button>
+    <button>blue</button>
+    <button>orange</button>
+    <button>green</button>
+    <button>purple</button>
+</body>
+</html>
+
+
+
+

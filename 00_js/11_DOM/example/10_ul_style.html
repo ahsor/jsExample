@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tabs</title>
+  </head>
+  <body>
+    <div id="tabs">
+      <ul>
+        <li><a href="#tabs-1">Nunc tincidunt</a></li>
+        <li><a href="#tabs-2">Proin dolor</a></li>
+        <li><a href="#tabs-3">Aenean lacinia</a></li>
+      </ul>
+    </div>
+    <script>
+      var tabs = document.querySelectorAll("#tabs a");
+      console.log(tabs);
+      for (var a = 0; a < tabs.length; a++) {
+        tabs.item(a).style.background = "red";
+        // jQuery는 내부적으로 처리를 해주므로
+        // ("#tabs a").css({'background' : "red" })
+      }
+    </script>
+  </body>
+</html>

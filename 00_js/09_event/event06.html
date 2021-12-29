@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tabs</title>
+  </head>
+  <body>
+    <h1 class="main__title">dom event Handler</h1>
+    <div id="tabs">
+      <ul>
+        <li><a href="#tabs-1">Nunc tincidunt</a></li>
+        <li><a href="#tabs-2">Proin dolor</a></li>
+        <li><a href="#tabs-3">Aenean lacinia</a></li>
+      </ul>
+    </div>
+
+    <button class="btn">클릭하세요!</button>
+    <script>
+      var btn = document.querySelector(".btn");
+      var mainTitle = document.querySelector(".main__title");
+
+      function btnClickHandler() {
+        mainTitle.style.background = "orange";
+      }
+
+      // btn.onclick = btnClickHandler;  // 구버전 : 할 수 있는 일이 별로 없음
+      btn.addEventListener("click", btnClickHandler);
+    </script>
+  </body>
+</html>

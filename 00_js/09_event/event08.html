@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tabs</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      li {
+        list-style: none;
+      }
+      #tabs ul {
+        display: flex;
+        width: 600px;
+      }
+      #tabs li {
+        margin: 0.2em;
+      }
+      #tabs a {
+        display: block;
+        padding: 1em;
+        background-color: cadetblue;
+      }
+
+      #tabs a.active-menu {
+        background: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="main__title">dom event Handler</h1>
+    <div id="tabs">
+      <ul>
+        <li><a href="#tabs-1" data-role="tab-menu">Nunc tincidunt</a></li>
+        <li><a href="#tabs-2" data-role="tab-menu">Proin dolor</a></li>
+        <li><a href="#tabs-3" data-role="tab-menu">Aenean lacinia</a></li>
+      </ul>
+    </div>
+
+    <script>
+      var tabs = document.querySelectorAll("#tabs a");
+      console.log(tabs);
+
+      function tabClickHandler() {
+        var activeMenu = document.querySelector(".active-menu");
+        // 항상 querySelector와 querySelectorAll 구분하여 사용할 것
+        // 또한 이러한 dom을 접근하는 메소드가 속도가 매우 느리고 dom에 의존적임
+        // 다음 event09로 개선 함
+
+        if (activeMenu) {
+          activeMenu.classList.remove("active-menu");
+        }
+        this.classList.add("active-menu");
+      }
+
+      for (var i = 0; i < tabs.length; i++) {
+        //tabs.item(i).addEventListener("click", tabClickHandler);
+        tabs[i].addEventListener("click", tabClickHandler);
+      }
+    </script>
+  </body>
+</html>

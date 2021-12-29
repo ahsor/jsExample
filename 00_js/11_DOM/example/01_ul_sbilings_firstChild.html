@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tabs</title>
+  </head>
+  <body>
+    <form action="">
+      <select name="" id="tabs">
+        <option value="라면">라면</option>
+        <option value="만두">만두</option>
+        <option value="불고기">불고기</option>
+      </select>
+    </form>
+    <script>
+      var div = document.getElementById("tabs"); // 부모 노드 get
+      var child = div.firstChild; // 첫번째 자식만 get
+      console.log(child.length); // 7개?
+
+      while (child) {
+        if (child.nodeType === 1) console.log(child.value);
+        child = child.nextSibling;
+        // div 구동시 에러
+      }
+    </script>
+  </body>
+</html>

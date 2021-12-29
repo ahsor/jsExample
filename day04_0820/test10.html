@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>collapse</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .collapse{ width:800px; margin: 100px; }
+        .title{ background-color:dodgerblue; color:#fff; 
+            padding: 0.5em; margin-bottom: 1em;
+        }
+        .content{ border:1px solid #888; border-radius: 10px; 
+            padding:1em; 
+        }
+    </style>
+    <script src="../script/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="collapse">
+        <div class="title">collapse Title</div>
+        <div class="content"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint maiores laudantium temporibus aut, rerum praesentium magni assumenda facere. Error, itaque sequi, debitis ullam deserunt distinctio quod nemo a impedit totam.</div>
+    </div>
+    <script>
+    $(function(){
+       /* collapse를 동작하도록 만들어 주세요. */
+        $('.title').click(function(){
+            $('.content').slideToggle();
+        })
+    })
+    </script>
+</body>
+</html>
+
+
+
+

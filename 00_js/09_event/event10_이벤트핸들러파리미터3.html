@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tabs</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      li {
+        list-style: none;
+      }
+      #tabs ul {
+        display: flex;
+        width: 600px;
+      }
+      #tabs li {
+        margin: 0.2em;
+      }
+      #tabs a {
+        display: block;
+        padding: 1em;
+        background-color: cadetblue;
+      }
+
+      #tabs a.active-menu {
+        background: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="main__title">dom event Handler</h1>
+    <div id="tabs">
+      <ul>
+        <li><a href="#tabs-1" data-role="tab-menu">Nunc tincidunt</a></li>
+        <li><a href="#tabs-2" data-role="tab-menu">Proin dolor</a></li>
+        <li><a href="#tabs-3" data-role="tab-menu">Aenean lacinia</a></li>
+      </ul>
+    </div>
+
+    <script>
+      var tabs = document.querySelector("#tabs");
+      var currentMenu;
+
+      function activate(el) {
+        el.classList.add("active-menu");
+        currentMenu = el;
+        console.log(el);
+      }
+
+      function inActivate(el) {
+        el.classList.remove("active-menu");
+      }
+
+      function tabClickHandler(event) {
+        if (currentMenu) {
+          inActivate(currentMenu);
+        }
+        activate(event.target);
+      }
+
+      tabs.addEventListener("click", tabClickHandler);
+      activate(document.querySelectorAll("#tabs a")[0]);
+      // 첫번째 메뉴 선택
+      // 구조화 시켜두니 첫번째 메뉴만 선택할 때도 필요한 구조물 넣기만 하면 됨
+    </script>
+  </body>
+</html>

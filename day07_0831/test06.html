@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scroll</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        header{ height:100vh; background-color: skyblue;  }
+        .nav ul{ display: flex;  background-color: green; }
+        .nav a{ display: block; padding: 1em;  }
+        section{ height: 1000px; width: 50%;      }
+        section:nth-of-type(1){  background-color: orange; }
+        section:nth-of-type(2){  background-color: blue; }
+        section:nth-of-type(3){  background-color: red; }
+        section:nth-of-type(4){  background-color: yellow; }
+        
+        .sticky{ position: fixed; width:100%; top:0; }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>logo</h1>
+    </header>
+    <nav class="nav">
+    <!-- sticky 클래스는 jQuery 에 의해서 삽입했다가 제거할 것임 -->
+        <ul>
+            <li><a href="#header">GEAR FIT2</a></li>
+            <li><a href="#section01">FITNESS</a></li>
+            <li><a href="#section02">DESIGN</a></li>
+            <li><a href="#section03">GAMIFICATION</a></li>
+            <li><a href="#section04">COMPATIBILITY</a></li>
+        </ul>
+    </nav>
+    <section id="section01"> FITNESS </section>
+    <section id="section02"> DESIGN </section>
+    <section id="section03"> GAMIFICATION </section>
+    <section id="section04"> COMPATIBILITY </section>
+    
+    <script src="../script/jquery-3.6.0.js"></script>
+    <script src="../script/jquery-ui.min.js"></script>
+    <script>
+    $(function(){
+        $(window).scroll(function(){
+            var st = $(this).scrollTop();
+            console.log( st );
+            
+            if( st >= 1000 ){
+                $('nav').addClass('sticky');
+            }else{ 
+                // sticky 빼는 코드 작성
+                $('nav').removeClass('sticky');
+            }
+        })
+        
+        $('nav a').click(function(){
+            var at = $(this).attr('href');
+            // <a href="#header" 
+            // '#header', '#section01', '#section02', '#section03', '#section04'
+            
+            var st = $(at).offset().top;
+            // 해당하는 엘르먼트의 top을 구함 
+            console.log( st );
+            $('html, body').stop().animate({ 'scrollTop' : st }, 400);
+        })
+    })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

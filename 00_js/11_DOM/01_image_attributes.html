@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tabs</title>
+  </head>
+  <body>
+    <img
+      src="http://placekitten.com/300/200"
+      alt="더미이미지"
+      height="200"
+      width="300"
+      id="myImg"
+      border="0"
+    />
+    <script>
+      var myimg = document.querySelector("#myImg");
+      var attrs = myimg.attributes; // 전체 속성 리스트를 NamedNodeMap 객체로 반환
+      // map 자료구조를 배열로 리턴
+
+      for (var i = 0; i < attrs.length; i++) {
+        //var attr = attrs[i];
+        var attr = attrs.item(i);
+        console.log(`${attr.name} : ${attr.value}`);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scroll</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        header{ height:100vh; background-color: skyblue;  }
+        .nav ul{ display: flex;  background-color: green; }
+        .nav a{ display: block; padding: 1em;  }
+        section{ height: 4000px; width: 50%; background-color: orange;
+            line-height: 4em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>logo</h1>
+    </header>
+    <nav class="nav sticky">
+        <ul>
+            <li><a href="#">GEAR FIT2</a></li>
+            <li><a href="#">FITNESS</a></li>
+            <li><a href="#">DESIGN</a></li>
+            <li><a href="#">GAMIFICATION</a></li>
+            <li><a href="#">COMPATIBILITY</a></li>
+        </ul>
+    </nav>
+    <section>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!
+    </section>
+    
+    <script src="../script/jquery-3.6.0.js"></script>
+    <script src="../script/jquery-ui.min.js"></script>
+    <script>
+    $(function(){
+        $(window).scroll(function(){
+            var st = $(this).scrollTop();
+            console.log( st );
+            
+            if( st >= 1000 ){
+                $('.sticky').css({'position':'fixed', 'top':0, 'width':'100%'});
+            }else{ 
+                // sticky 빼는 코드 작성
+                $('.sticky').css({'position':'static'});
+            }
+        })
+    })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

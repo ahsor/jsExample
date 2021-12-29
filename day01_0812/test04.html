@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>출력</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        header{ height: 200px; background-color: orange; }
+        section{ height: 200px; background-color: blue; }
+        #footer{ height: 200px; background-color: green; }
+        .navi{ }
+    </style>
+    
+</head>
+<body>
+    <header></header>
+    <nav class="navi"></nav>
+    <section></section>
+    <footer id="footer"></footer>
+    <script>
+        /* 입력 -> 처리(연산, 논리) -> 출력 */
+        document.write('한글은 아름다운 글입니다.');
+        document.getElementsByTagName('section')[0].innerHTML = "section";
+        document.getElementsByClassName('navi')[0].textContent = '메뉴';
+        document.getElementById('footer').textContent = " 아이디 이용 ";
+        document.querySelector('header').innerHTML = "노드 구분없이 사용가능 ";
+        /* 아이디, 태그, 클래스 */
+        document.querySelector('section').innerHTML = "querySelector tag";
+        document.querySelector('.navi').textContent = 'querySelector class';
+        document.querySelector('#footer').textContent = "querySelector id";
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css()</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        button{ padding: 1em; }
+        div{ width:200px; height: 200px; 
+            background-color: orange; display: none; 
+        }
+    </style>
+    <!--<script src="../script/jquery-3.6.0.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    $(function(){
+        /* show(), hide() */
+        /* 보임 button을 클릭하면 div을 보이이도록 코딩하세요. */
+        $('button:nth-child(1)').click(function(){
+            //$('div').css('display','block');
+            //$('div').css({'display':'block'});
+            $('div').show(5000);
+            /*
+            jQuery의 기본시간 : 1000 = 1s; 
+            jQuery의 메소스 실행기본시간 : 400 = 0.4s; 
+            'fast' == 200; 
+            'slow' == 600;
+            5000  == 5s; 
+            */
+        })
+        $('button:nth-child(2)').click(function(){
+            //$('div').css({'display':'none'});
+            $('div').hide('slow');
+        })
+        
+    })
+    </script>
+</head>
+<body>
+    <button> 보임 </button>
+    <button> 숨김 </button>
+    <div> 보임과 숨김 </div>
+</body>
+</html>
+
+

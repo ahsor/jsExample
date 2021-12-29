@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .lnb{ width: 200px; margin: 50px; }
+        .lnb>ul>li>a{ display: block; height: 30px; line-height: 30px; 
+            background-color: lightblue; 
+            border-bottom: 1px solid skyblue; 
+        }
+        .subMenu li{ overflow: hidden; }
+    </style>
+    <script src="../script/jquery-3.6.0.min.js"></script>
+    <script src="../script/jquery-ui.min.js"></script>
+    <script>
+    $(function(){
+        //$('.subMenu').slideUp();
+        $('.subMenu>li').stop().animate({'height': '0px' })
+        
+        $('.lnb>ul>li').mouseover(function(){
+            //$(this).find('.subMenu').stop().slideDown();
+            $(this).find('.subMenu>li').stop().animate({'height': '30px' })
+        }).mouseout(function(){
+            //$(this).find('.subMenu').stop().slideUp();
+            $(this).find('.subMenu>li').stop().animate({'height': '0px' })
+        })
+        /* find() : 자손 태그를 찾는 메서드 */
+    })
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="lnb">
+            <ul>
+                <li><a href="#">MENU01</a>
+                <ul class="subMenu">
+                    <li><a href="#">SUBMENU01</a></li>
+                    <li><a href="#">SUBMENU01</a></li>
+                    <li><a href="#">SUBMENU01</a></li>
+                    <li><a href="#">SUBMENU01</a></li>
+                </ul>
+                </li>
+                <li><a href="#">MENU02</a>
+                <ul class="subMenu">
+                    <li><a href="#">SUBMENU02</a></li>
+                    <li><a href="#">SUBMENU02</a></li>
+                </ul>
+                </li>
+                <li><a href="#">MENU03</a>
+                <ul class="subMenu">
+                    <li><a href="#">SUBMENU03</a></li>
+                    <li><a href="#">SUBMENU03</a></li>
+                    <li><a href="#">SUBMENU03</a></li>
+                </ul>
+                </li>
+                <li><a href="#">MENU04</a>
+                <ul class="subMenu">
+                    <li><a href="#">SUBMENU04</a></li>
+                    <li><a href="#">SUBMENU04</a></li>
+                    <li><a href="#">SUBMENU04</a></li>
+                    <li><a href="#">SUBMENU04</a></li>
+                </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nodeValue</title>
+  </head>
+  <body>
+    <div id="page">
+      <h1 id="header">목록</h1>
+      <h2>선택할 식료품</h2>
+      <ul>
+        <li id="one" class="hot"><em>신선한</em>무화과</li>
+        <li id="two" class="hot">애플망고</li>
+        <li id="three" class="hot">발사믹식초</li>
+        <li id="four">시금치</li>
+      </ul>
+    </div>
+    <script>
+      // nodeValue속성을 사용하려면 텍스트노드를 포함하고 있는 상위요소가 아니라
+      // 반드시 텍스트 노드를 선택해야 한다.
+      var em = document.querySelector("em");
+      console.log(em);
+      var text = em.nodeValue;
+      console.log(`em의 텍스트노드 출력 에러 ${text}`); // null error
+      text = em.firstChild.nodeValue;
+      console.log(`em의 텍스트노드 출력 ${text}`); // 신선한 출력
+
+      var list = document.querySelectorAll("li[id]");
+      console.log(list);
+      text = list[0].firstChild.nextSibling.nodeValue;
+      console.log(`first li의 텍스트노드 출력 ${text}`); // 무화과 출력
+      text = list[2].firstChild.nodeValue;
+      console.log(`first li의 텍스트노드 출력 ${text}`); // 발사믹 출력
+
+      text = text.replace("발사믹", "양배추");
+      console.log(text);
+      list[2].firstChild.nodeValue = text;
+      // jQuery가 필요한 순간 ㅠ.ㅠ
+      // $('#two').text('양배추')
+    </script>
+  </body>
+</html>

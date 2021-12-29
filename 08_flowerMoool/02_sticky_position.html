@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        /* check test */
+        #productCheck~div label{ opacity: 0.1;}
+        #productCheck:checked~div label{ opacity: 1;}
+
+        section{ width: 1200px; margin: auto; display: flex;}
+        section>div{ width:50%; padding: 2em;}
+        .orderItem{ background-color: peachpuff;}
+        .productList{ background-color:peru;}
+
+    </style>
+</head>
+<body>
+    
+    <section>
+        <div class="orderAccount">
+            <div class="orderItem">
+                <div class="orderSize">상품을 선택해주세요.</div>
+                <div class="orderCycle">배송주기</div>
+                <div class="orderNumberOfDeliery">배송횟수</div>
+                <div id="orderDate">첫배송일</div>
+                <div id="orderWeekday">선호배송일</div>
+            </div>
+            <div class="orderAmount">
+                <div id="productPice">0월</div>
+                <div id="productDiscount">0%</div>
+                <div id="paymentAmount">0원</div>
+            </div>
+        </div>
+        <div class="productList">
+            <div>onOff 리스트로 보기</div>
+            <input type="checkbox" id="productCheck">
+            <div class="productItem">
+                <div>1. 꽃다발은 어떤 크기가 좋을까요?</div>
+                <div class="productSize">
+                    <div><label for="productCheck">베이직</label></div>
+                    <div><label for="productCheck">볼륨업</label></div>
+                </div>
+                <div>2. 얼마나 자주 꽃다발을 받아보시겠어요?</div>
+                <div class="deliveryCycle">
+                    <div>2주에 한번</div>
+                    <div>4주에 한번</div>
+                </div>
+                <div class="numberOfDelivery">
+                    <div class="numberOfDeliveryTarget">기간을 정하지 않고 2주마다 계속 받기</div>
+                    <div>1개월</div>
+                    <div>2개월</div>
+                    <div>3개월</div>
+                    <div>4개월</div>
+                </div>
+                <div>희망하는 첫배송일을 선택해주세요.</div>
+                <div class="deliveryDate">
+                    <input type="date">
+                </div>
+                <div>선호요일</div>
+                <div class="deliveryWeekday">
+                    <div>화</div>
+                    <div>수</div>
+                    <div>목</div>
+                    <div>금</div>
+                </div>
+
+            </div>
+            
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            const orderAccount = document.querySelector('.orderAccount');
+            const orderItem = document.querySelector('.orderItem');
+            const orderAmount = document.querySelector('.orderAmount');
+
+        
+    
+            const productSize = document.querySelector('.productSize');
+            const deliveryCycle = document.querySelector('.deliveryCycle');
+            const numberOfDelivery = document.querySelector('.numberOfDelivery');
+            const deliveryDate = document.querySelector('.deliveryDate');
+            const deliveryWeekday = document.querySelector('.deliveryWeekday');
+
+            productSize.addEventListener('click', function(ev){
+                let valuetext = ev.target.innerHTML;
+                // console.log( orderItem.firstElementChild );
+                orderItem.firstElementChild.innerHTML = valuetext; 
+            })
+            deliveryCycle.addEventListener('click', function(ev){
+                let valuetext = ev.target.innerHTML;
+                calculation();
+                orderItem.firstElementChild.nextElementSibling.innerHTML = valuetext; 
+                
+            })
+            const orderItemAry = [];
+            function calculation(){
+                orderItem.childNodes.forEach(function(item){
+                    orderItemAry.push(item.innerHTML);
+                })
+                console.log( orderItemAry)
+                let defaultValue = 0; 
+                let discountValue = 0; 
+               
+                defaultValue = orderItemAry.indexOf('베이직')>=0 ? 24000 : orderItemAry.indexOf('볼륨업')>=0 ? 35000 : 0 ;
+                productPice.innerHTML = defaultValue; 
+
+                discountValue = orderItemAry.indexOf('2주에 한번') ? 1 : orderItemAry.indexOf('4주에 한번') ? 0.5 : 0 ;
+                productDiscount.innerHTML = discountValue; 
+                if( defaultValue === 0 ){ alert('사이즈를 선택해주세요.')}
+                
+                paymentAmount.innerHTML = defaultValue * discountValue;
+            }
+            numberOfDelivery.addEventListener('click', function(ev){
+                let valuetext = ev.target.innerHTML;
+                orderItem.firstElementChild.nextElementSibling.nextElementSibling.innerHTML = valuetext; 
+            })
+            deliveryDate.addEventListener('change', function(ev){
+                let valuetext = ev.target.value;
+                console.log( ev.target.value)
+                orderDate.innerHTML = valuetext; 
+            })
+
+            deliveryWeekday.addEventListener('click',function(ev){
+                let valuetext = ev.target.innerHTML;
+                orderWeekday.innerHTML = valuetext; 
+            })
+
+        })
+    </script>
+</body>
+</html>

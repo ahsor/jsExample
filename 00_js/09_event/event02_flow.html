@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        width: 100%;
+        height: 100vh;
+      }
+      .box {
+        background-color: orange;
+      }
+      /* .box 클릭과 body 클릭 후 실행을 상세히 확인해보기 */
+    </style>
+  </head>
+  <body>
+    <div class="box">box</div>
+    <script>
+      const html = document.documentElement;
+      // 브라우저가 지정한 html 이름
+      const body = document.body;
+      const box = document.querySelector(".box");
+
+      html.addEventListener(
+        "click",
+        function () {
+          console.log("html click");
+        },
+        true
+      );
+      // false=버블링=생략해도 기본 버블링 설정
+      body.addEventListener(
+        "click",
+        function () {
+          console.log("body click");
+        },
+        true
+      );
+      box.addEventListener(
+        "click",
+        function () {
+          console.log("box click");
+        },
+        false
+      );
+      // .box는 true를 주는 것이 의미가 없음
+    </script>
+  </body>
+</html>

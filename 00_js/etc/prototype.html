@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        Array.prototype.kims = function(){
+    console.log('test');
+}
+
+var k = new Array();
+k.kims();
+//  nodejs가 가지고 있는 속성으로 브라우저가 실행할 수는 없음 
+console.log( __filename );
+console.log( __dirname );
+    </script>
+</body>
+</html>

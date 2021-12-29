@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <style>
+      header {
+        width: 1200px;
+        height: 100px;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        z-index: 99;
+      }
+      .lnb {
+        float: right;
+      }
+      .lnb a {
+        text-align: center;
+        line-height: 30px;
+      }
+      .lnb > ul > li {
+        width: 150px;
+        float: left;
+      }
+      /* 부모의 너비가 지정되었으므로 자식의 너비도 자동으로 150px */
+      .lnb > ul > li > a {
+        display: block;
+        height: 30px;
+      }
+      .lnb > ul > li:hover > a {
+        background-color: green;
+      }
+
+      .subMenu {
+        display: none;
+        width: 100%;
+        position: absolute;
+        /* position상 부모는 header */
+        left: 0;
+        top: 60px;
+      }
+      .subMenu li {
+        width: 150px;
+      }
+      .lnb > ul > li:hover > .subMenu {
+        display: flex;
+        justify-content: center;
+      }
+      /* float 타입은 자식을 모두 가운데로 배치하기는 힘들므로 
+           플랙스방식으로 바꾼 후 가운데 배치하는 법
+         */
+      .subMenu a {
+        display: block;
+        height: 30px;
+      }
+      .subMenu a:hover {
+        background-color: lightgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="clearFix">
+      <h1>logo</h1>
+      <nav class="lnb">
+        <ul>
+          <li>
+            <a href="#">소장처별</a>
+            <ul class="subMenu">
+              <li><a href="#">한국</a></li>
+              <li><a href="#">프랑스</a></li>
+              <li><a href="#">이탈리아</a></li>
+              <li><a href="#">독일</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">장르별</a>
+            <ul class="subMenu">
+              <li><a href="#">회화</a></li>
+              <li><a href="#">판화</a></li>
+              <li><a href="#">공예/고대유물</a></li>
+              <li><a href="#">그외</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">테마별</a>
+            <ul class="subMenu">
+              <li><a href="#">초상화/인물</a></li>
+              <li><a href="#">종교</a></li>
+              <li><a href="#">신화/문학</a></li>
+              <li><a href="#">일상/스포츠</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">시대별</a>
+            <ul class="subMenu">
+              <li><a href="#">1900년이전</a></li>
+              <li><a href="#">1900년대</a></li>
+              <li><a href="#">현대</a></li>
+              <li><a href="#">그외</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>이벤트</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <style>
+      div {
+        border: 1px solid black;
+        margin-bottom: 1em;
+        padding: 1em;
+        margin: 1em;
+      }
+    </style>
+    <script src="../script/jquery-3.6.0.js"></script>
+    <script>
+      $(function () {
+        /* 이벤트  : 사건 
+            클릭, 이동, 드롭, 드래그, 스크롤, 키보드 클릭, 
+            마우스오버, 마우스아웃, 더블클릭, 
+        */
+        $("div").click(function () {
+          $("div").html("마우스를 클릭하였습니다.");
+        });
+
+        $("div").mouseenter(function () {
+          $("div").html("마우스 enter");
+        });
+
+        $("div").mouseleave(function () {
+          $("div").html("마우스 leave");
+        });
+
+        $("div").mouseover(function () {
+          $("div").html("마우스 오버");
+        });
+
+        $("div").mouseout(function () {
+          $("div").html("마우스 아웃");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div>이벤트</div>
+  </body>
+</html>

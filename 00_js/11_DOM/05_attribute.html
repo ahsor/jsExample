@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>innerHTML</title>
+    <style>
+      em {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <h1 id="header">목록</h1>
+      <h2>선택할 식료품</h2>
+      <ul>
+        <li id="one" class="hot"><em>신선한</em>무화과</li>
+        <li id="two" class="hot">애플망고</li>
+        <li id="three" class="hot">발사믹식초</li>
+        <li id="four">시금치</li>
+      </ul>
+      <div id="scriptResults"></div>
+    </div>
+    <script>
+      var li = document.querySelectorAll("li");
+      var oneClass = li[0].getAttribute("class");
+      console.log(oneClass);
+      if (li[0].hasAttribute("data-name")) {
+        il[0].removeAttrubute("data-name");
+      } else {
+        li[0].setAttribute("data-name", "cool");
+      }
+
+      /*
+      크롬 : f12 > elements > properties 에서 첫번째 줄에 속성 확인 가능 
+      파이어폭스 : f12 > Inspector 또는 Accessibility 에서 확인 가능 
+      */
+    </script>
+  </body>
+</html>

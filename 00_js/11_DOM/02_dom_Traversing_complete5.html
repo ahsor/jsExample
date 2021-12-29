@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>innerHTML</title>
+    <style>
+      em {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <h1 id="header">목록</h1>
+      <h2>선택할 식료품</h2>
+      <ul>
+        <li id="one" class="hot"><em>신선한</em>무화과</li>
+        <li id="two" class="hot">애플망고</li>
+        <li id="three" class="hot">발사믹식초</li>
+        <li id="four">시금치</li>
+      </ul>
+      <div id="scriptResults"></div>
+    </div>
+    <script>
+      // textContent, innerHTML : 마크업은 무시한채 텍스트를 가져오기
+      var firstItem = document.getElementById("one"); // 목록의 첫 번째 아이템을 찾는다.
+      var showTextContent = firstItem.textContent; // textContent 속성을 이용하여 텍스트를 가져온다.
+      var showInnerText = firstItem.innerText; // innerText 속성을 이용하여 텍스트를 가져온다.
+      console.log(`one.textContent ${firstItem.textContent}`); // ie9 이하는 지원되지 않음
+      console.log(`one.innerHTML ${firstItem.innerHTML}`);
+      // innerHTML은 표준이 아니므로 파이어폭스 지원되지 않으므로 undefined 리턴
+      // css에 의해 숨겨진 내용은 표지되지 않음
+      // textContent 보다 동작이 느릴 수 있음
+      // 태그를 모두 표시하므로 보안문제가 발생할 수 있음
+
+      // 두 속성을 통해 가져온 값을 목록 다음에 추가한다.
+      var msg = "<p>textContent: " + showTextContent + "</p>";
+      msg += "<p>innerText: " + showInnerText + "</p>";
+      var el = document.getElementById("scriptResults");
+      el.innerHTML = msg;
+
+      //firstItem.textContent = "사워도우 빵"; // 첫 번째 아이템을 수정한다.
+    </script>
+  </body>
+</html>

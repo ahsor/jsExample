@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css()</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        button{ padding: 1em; }
+        div{ width:200px; height: 200px; 
+            background-color: orange; 
+            /* transition:2s; */
+        }
+    </style>
+    <!--<script src="../script/jquery-3.6.0.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    $(function(){
+        /* fadeIn(), fadeOut() 
+        
+        jQuery의 기본시간 : 1000 = 1s; 
+        jQuery의 메소스 실행기본시간 : 400 = 0.4s; 
+        'fast' == 200; 
+        'slow' == 600;
+        5000  == 5s; 
+        */
+        /* 보임 button을 클릭하면 div을 보이이도록 코딩하세요. */
+        $('button:nth-child(1)').click(function(){
+            //$('div').css({'opacity': 1, 'transition': '2s'});
+            $('div').fadeIn(3000);
+        })
+        $('button:nth-child(2)').click(function(){
+            //$('div').css({'opacity': 0});
+            $('div').fadeOut(3000);
+        })
+        
+        var $div = $('div');
+        var $btn3 = $('button:nth-child(3)');
+        var $btn4 = $('button:nth-child(4)');
+        var num = 10; 
+        
+        $btn3.click(function(){
+            $div.fadeTo(2000, 0.5);
+            /* opacity 의 정도를 지정할 수 있으나 
+                반드시 스피드를 지정해야 함 
+            */
+        })
+        $btn4.click(function(){
+            $div.fadeTo( 2000, 1);
+        })
+        /* toggle : 하나의 버튼으로 2개의 기능을 번갈아 사용하는 것 
+            키보드 : numlock, capslock, 한/영, 윈도우 로고키
+        */
+        
+        var $fadeToggle = $('button:nth-child(5)');
+        $fadeToggle.click(function(){
+            $div.fadeToggle();
+            /*
+            fadeIn() <-> fadeOut() 번갈아 사용하도록 만들어진 메소드
+            */
+        })
+    })
+    </script>
+</head>
+<body>
+    <button> fadeIn </button>
+    <button> fadeOut </button>
+    <button> fadeTo 0.5 </button>
+    <button> fadeTo 1 </button>
+    <button> fadeToggle </button>
+    <div> 보임과 숨김 </div>
+</body>
+</html>
+
+

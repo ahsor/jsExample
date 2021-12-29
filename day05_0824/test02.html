@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .box{ width:200px; height: 200px; background-color: skyblue;
+            margin:50px; border: 0px solid black; 
+        }
+       /* transition-duration 속성과 충돌 주의 */
+    </style>
+    <script src="../script/jquery-3.6.0.js"></script>
+    <script>
+    $(function(){
+        $('.borderWidth').click(function(){
+            $('.box').animate({ 'borderWidth': '10'});
+            // px단위는 생략할 수 있으나 다른 단위는 반드시 사용해야 함 
+        })
+        $('.width').click(function(){
+            $('.box').animate({ 'width': '400'});
+        })
+        $('.box').mouseover(function(){
+            /* .height */
+            $(this).animate({ 'height': '400'});
+        }).mouseout(function(){
+            $(this).animate({ 'height': '200'});
+        })
+        
+        $('.margin').click(function(){
+            $('.box').animate({ 'margin': '100'});
+        })
+        $('.opacity').click(function(){
+            $('.box').animate({ 'opacity': 0.5,'fontSize':'24px', 'letterSpacing':'0.5em' });
+        })
+        $('.lineHeight').click(function(){
+            $('.box').animate({ 'opacity': 1,'lineHeight':'2em', 'textIndent':'3em' });
+        })
+        
+    })
+    </script>
+</head>
+<body>
+    <!--
+        css( 'opacity':0 ) + transition-duration
+        => animate({속성:숫자값, ...}, speed, easing, callback)
+    -->
+    <button class="borderWidth"> borderWidth </button>
+    <button class="width"> width </button>
+    <button class="height"> height </button>
+    <button class="margin"> margin </button>
+    <button class="opacity"> opacity </button>
+    <button class="fontSize"> fontSize </button>
+    <button class="letterSpacing"> letterSpacing </button>
+    <button class="lineHeight"> lineHeight </button>
+    <button class="textIndent"> textIndent </button>
+    <div class="box">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo sed eaque dolores ducimus vel placeat animi, vero tempora veritatis, magnam reprehenderit pariatur incidunt, voluptates recusandae architecto repellendus tenetur? Repudiandae, ducimus.
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

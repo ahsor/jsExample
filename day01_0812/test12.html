@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>처리</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        header{ height: 200px; background-color: orange; }
+        section{ height: 200px; background-color: blue; }
+        #footer{ height: 200px; background-color: green; }
+        .navi{ }
+    </style>
+    
+</head>
+<body>
+    <header></header>
+    <nav class="navi"></nav>
+    <section></section>
+    <footer id="footer"></footer>
+    <script>
+       /* 입력 -> 처리 -> 출력 
+        산술, 논리, 비교...
+        
+        // 산술 연산자 : + - * / %
+        // 문자열 결합 연산자 : + 
+        // 대입연산자 : = +=  -= *= /= %=
+        // 증감연산자 : ++ --
+       */
+       
+        /* 연산 우선 순위 */
+        console.log( 2 + 4 * 4 / 2 - 3 % 3  );
+        // 산술 : 왼쪽->오른쪽, () * / % + - 
+        
+        
+        var dat1 = 2 + 4 * 4 / 2 - 3 % 3 ;
+        // = 연산 우선순위가 최하위 
+        
+        var num = 10; 
+        var dat2 = 2 + 4 + num++;
+        // dat2 = 16 => 10 + 10 
+        // num = 11 증가 
+        console.log( 'num = ', num );
+        console.log( 'dat2 = ' , dat2 );
+        // num++ 증가되는 연산우선은 최하위이므로 dat2에 결과에 num의 증가된 값을 반영하지 않음 
+        
+        num = 10; 
+        var dat3 = 2 + 4 + ++num;
+        // ++num 최우선 순위 연산으로 num 증가값이 dat3에 반영됨 
+        console.log( 'num = ', num );
+        console.log( 'dat3 = ' , dat3 );
+        
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .box{ width:200px; height: 200px; background-color: skyblue;
+            margin:50px; border: 0px solid black; 
+        }
+       /* transition-duration 속성과 충돌 주의 */
+    </style>
+    <script src="../script/jquery-3.6.0.js"></script>
+    <script src="../script/jquery-ui.js"></script>
+    <script>
+    $(function(){
+        
+        $('.skyblue').click(function(){
+            $('.box').animate({'background-color':'skyblue'})
+            //$('.box').css({ 'transition':'1s','background-color':'skyblue'})
+        });
+       $('.green').click(function(){
+            $('.box').animate({'background-color':'green'})
+           //$('.box').css({ 'transition':'1s','background-color':'green'})
+        });
+      
+    })
+    </script>
+</head>
+<body>
+    <!--
+        css( 'opacity':0 ) + transition-duration
+        => animate({속성:숫자값, ...}, speed, easing, callback)
+       jQuery-UI 사용이유 : easign 
+                           색상도 애니메이션
+    -->
+
+    <button class="skyblue"> skyblue </button>
+    <button class="green"> green </button>
+    <div class="box">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo sed eaque dolores ducimus vel placeat animi, vero tempora veritatis, magnam reprehenderit pariatur incidunt, voluptates recusandae architecto repellendus tenetur? Repudiandae, ducimus.
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

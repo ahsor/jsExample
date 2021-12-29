@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <style>
+        body{ overflow-y:scroll; }
+        h1{ background-color: orange; }
+    </style>
+    <script src="../script/jquery-3.6.0.js"></script>
+    <script src="../script/jquery-ui.js"></script>
+    <script>
+    $(function(){
+        /* function : 함수 = 메서드(오브젝트가 가지고 있는 함수)
+            반복되는 동일한 기능을 여러번 사용하고자 할때 사용 
+        */
+        
+        var adding = function(){ // 파라미터 유무와는 관계없음 
+            var n1 = parseInt(prompt('정수를 입력하세요.'));
+            var n2 = parseInt(prompt('정수를 입력하세요.'));
+            
+            return n1 + n2; 
+        }
+        
+        var reNum = adding(); // 
+        console.log(reNum)
+        reNum = adding(); 
+        $('h2').text( reNum)
+        reNum = adding(); // 
+        $('h1').text( reNum );
+        
+        /*
+        // show(), hide()
+        function show(){
+            // 보임기능 구현 
+        }
+        function hide(){
+            // 숨김기능 구현 
+        }
+        function show( duration ){
+            // 시간에 따른 보임 구현 
+        }
+        */
+    })
+    </script>
+</head>
+<body>
+    <h1> 데이터 출력 </h1>
+    <h2> 데이터 출력 </h2>
+</body>
+</html>
+
+
+
+

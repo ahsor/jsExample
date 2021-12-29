@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sidePanel</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        #wrapper{ width: 1200px; margin: auto; height: 3000px; 
+            background-color: pink; 
+        }
+        aside{ width: 300px; height: 100%; position: fixed; 
+            right: 0; top:0; background-color: skyblue; 
+            transition:0.4s; 
+        }
+        .btn{ padding: 1em; position: absolute; left:0; top:50%;
+            transform: translate(-100%, -50%) ;
+            background-color: #fff; 
+            border:1px solid #888; color:#888;
+            border-right:none; 
+        }
+    </style>
+    <script src="../script/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <header></header>
+        <section></section>
+        <footer></footer>
+    </div>
+    <aside>
+        <button class="btn"> &gt; </button>
+    </aside>
+    
+    <script>
+    $(function(){
+        // 처리할일은 열기/닫기 2가지 경우이므로 방법2가 필요
+        var open = true; // true=열린상태, false=닫힌상태
+        
+        $('.btn').click(function(){
+            if(open){
+                $('aside').css({ 'right': '-300px'});
+                $(this).html('&lt;');
+                open = false; 
+            }else{
+                $('aside').css({ 'right': '0px'});
+                $(this).html('&gt;');
+                open = true; 
+            }
+        })
+    })
+    </script>
+</body>
+</html>
+
+
+
+

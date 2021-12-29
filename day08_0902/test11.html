@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bxSlider-cdn</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../css/jquery.bxslider.min.css">
+  <!-- 
+    갤러리
+    bxslider.js
+    slickSlider.js
+    swiper.js
+  -->
+  <script src="../script/jquery-3.6.0.min.js"></script>
+  <script src="../script/jquery.bxslider.min.js"></script>
+  <style>
+    .my-slider{ margin: auto; width:800px; position: relative;}
+    #slider-prev, #slider-next{ cursor: pointer; }
+    .dots{ display: flex ;}
+    .dots li{  width: 50px; height: 20px; margin: 5px;
+      background-color: greenyellow; text-align: center;
+      list-style: 20px; 
+      }
+    .dots a{ display: block;}
+
+    .outside{ position: absolute; top: 50%; width:100%; }
+    .outside p span{ position: absolute;   }
+    .outside p span:nth-of-type(1){ left: 100px;  }
+    .outside p span:nth-of-type(2){ right: 100px;  }
+    .dots{ transform: translateX(40%);}
+  </style>
+</head>
+<body>
+  <div class="my-slider">
+    <div class="first-slider  slider">
+      <div><img src="https://app-storage-edge-002.cafe24.com/bannermanage2/mylady333/2021/09/01/2f8a2e86daa4976ce064ed10b2a05727.gif" alt="" title="첫번째"></div>
+      <div><img src="https://app-storage-edge-002.cafe24.com/bannermanage2/mylady333/2021/09/01/e4dbb65225841a9d69b85a172572af7f.jpg" alt="" title="두번째"></div>
+      <div><img src="https://app-storage-edge-002.cafe24.com/bannermanage2/mylady333/2021/09/01/778abddc97d813d61a1805092c39703b.jpg" alt="" title="세번째"></div>
+      <div><img src="https://app-storage-edge-002.cafe24.com/bannermanage2/mylady333/2021/09/01/84661a24eaf568decf1a26a46a8bf402.gif" alt="" title="네번째"></div>
+    </div>
+    <div class="outside">
+      <h2> 사용자 control 버튼 지정 </h2>
+      <p><span id="slider-prev"> 이전 이미지</span> | <span id="slider-next"> 이후 이미지 </span></p>
+      
+      <ul class="dots">
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+      </ul>
+      
+    </div>
+  </div>
+
+    <script>
+      $(function(){
+        var  slider = $('.slider').bxSlider({
+            // 속성 : 값,
+            mode : 'horizontal', 
+            speed:3000, // 3초동안 슬라이드
+            slideWidth: 800, 
+            controls : false,
+            pager:false
+        });
+
+        $('#slider-prev').click(function(){
+          // $(slider).goToPrevSlide(); 오류 
+          slider.goToPrevSlide();
+        })
+        
+        $('#slider-next').click(function(){
+          slider.goToNextSlide();
+        })
+
+        $('.dots a').click(function(){
+          var i = $(this).parent().index();  // li번호 찾기
+          console.log( i)
+          slider.goToSlide(i); // 지정된 번호로 이동하기 
+        })
+      })
+      /*
+      $(document).ready(function(){
+        $('.slider').bxSlider();
+      });
+      */
+    </script>
+</body>
+</html>

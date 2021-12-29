@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        header{ height: 200px; background-color: orange; }
+        section{ height: 200px; background-color: blue; }
+        footer{ height: 200px; background-color: green; }
+    
+    </style>
+    
+</head>
+<body>
+    <header></header>
+    <section></section>
+    <footer></footer>
+    <script>
+        documentgetElementsByTagName('header')[0].innerHTML = 'HEADER'
+        // 1 -> 0 , nth-child(1) -> [0]
+        // ' 오타일때  Uncaught SyntaxError: missing ) after argument list
+        // 0 오타일때  Uncaught SyntaxError: Unexpected token ']'
+        // = 오타일때  Uncaught SyntaxError: Unexpected string
+        // ; 생략은 오류가 아니나 한줄 여러개 명령어 사용하려면 반드시 ; 가 필요하고 
+        // 자바스크립트를 제외한 다른 언어들은 반드시 명령어 끝에 ; 필요
+        // . 오타일때 
+        // Uncaught ReferenceError: documentgetElementsByTagName is not defined at test03.html:20
+        document.getElementsByTagName('header')[0].style.backgroundColor = 'red';
+    </script>
+</body>
+</html>

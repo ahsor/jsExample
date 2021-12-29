@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tabs</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      li {
+        list-style: none;
+      }
+      #tabs ul {
+        display: flex;
+        width: 600px;
+      }
+      #tabs li {
+        margin: 0.2em;
+      }
+      #tabs a {
+        display: block;
+        padding: 1em;
+        background-color: cadetblue;
+      }
+
+      #tabs a.active-menu {
+        background: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="main__title">dom event Handler</h1>
+    <div id="tabs">
+      <ul>
+        <li><a href="#tabs-1" data-role="tab-menu">Nunc tincidunt</a></li>
+        <li><a href="#tabs-2" data-role="tab-menu">Proin dolor</a></li>
+        <li><a href="#tabs-3" data-role="tab-menu">Aenean lacinia</a></li>
+      </ul>
+    </div>
+
+    <script>
+      // 클릭 이벤트 파라미터 확인을 위한 부모 선택
+      // 즉 이벤트 위임을 사용하여 개선함
+      var tabs = document.querySelector("#tabs");
+      console.log(tabs);
+      var currentMenu;
+
+      function tabClickHandler(event) {
+        if (currentMenu) {
+          currentMenu.classList.remove("active-menu");
+        }
+        event.target.classList.add("active-menu");
+        currentMenu = event.target;
+      }
+
+      tabs.addEventListener("click", tabClickHandler);
+      // for문을 돌지 않으므로 성능에 분명 도움이 됨
+      // 이벤트 위임
+      // 콘테이너에 이벤트를 위임했다면 새로운 생성물에 이벤트를 생성하지 않아도 됨
+      // 대신 사용할 때 target 만 조사해서 사용하면 간단함
+      // jQuery의 $(this)도 이벤트 위임
+    </script>
+  </body>
+</html>

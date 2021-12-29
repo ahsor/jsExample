@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tabs</title>
+  </head>
+  <body>
+    <img
+      src="http://placekitten.com/300/200"
+      alt="더미이미지"
+      height="200"
+      width="300"
+      id="myImg"
+      border="0"
+    />
+    <script>
+      var myimg = document.querySelector("#myImg");
+      var attr = myimg.getAttribute("id");
+      console.log(attr);
+      myimg.setAttribute("class", "jemicom");
+      // F12 > element 직접 확인
+      console.log(myimg.getAttribute("id"));
+
+      // 함수의 return과 파라미터를 생각해 보기
+    </script>
+  </body>
+</html>

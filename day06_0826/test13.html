@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class제어</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <style>
+        body{ overflow-y:scroll; }
+        button{ padding: 1em; }
+        .bg{ background-color: red; }
+        .border{ border:5px solid orange; }
+        .opacity{ opacity: 0; }
+        div{ width:300px; height: 300px; 
+            border:1px dotted blue; 
+        }
+    </style>
+    <script src="../script/jquery-3.6.0.js"></script>
+    <script src="../script/jquery-ui.js"></script>
+    <script>
+    $(function(){
+        /*
+        class제어 
+        .addClass('클래스명') // 클래스 추가 
+        .removeClass('클래스명') // 클래스 제거
+        .toggleClass('클래스명') // 지정된 클래스가 없으면 추가하고 있으면 제거함 
+        .hasClass('클래스명')
+        */
+        $('button').eq(0).click(function(){
+            $('div').toggleClass('bg');
+        })
+        $('button').eq(1).click(function(){
+            $('div').toggleClass('border');
+        })
+        $('button').eq(2).click(function(){
+            $('div').toggleClass('opacity');
+        })
+       
+        
+    })
+    </script>
+</head>
+<body>
+   <button> bg </button>
+   <button> border </button>
+   <button> opacity </button>
+    <div></div>
+</body>
+</html>
+
+
+
+

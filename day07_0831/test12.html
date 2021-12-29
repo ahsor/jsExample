@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pager</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .gallery{ width: 100%; height: 600px;
+            background-color: skyblue; 
+            /*
+            방법1: 
+            display: flex;  justify-content: center; 
+            align-items: flex-end; */
+            position:relative; 
+        }
+        .indecator{ position: absolute; bottom: 50px; left:50%; 
+            transform: translateX(-50%);
+        }
+        .indecator ul{ display: flex;  }
+        .indecator li{ width:20px; height: 20px; 
+            background-color: darkgoldenrod; text-align: center; line-height: 20px; margin: 2px;
+        }
+        li.active{ background-color:yellow; }
+        div.active{ }
+        h1.active{ }
+        
+        .control{ position: absolute; top:50%; transform: translateY(-50%);
+            width: 100%; 
+        }
+        .control span{ display: block; position: absolute; 
+            width: 50px; height: 50px; 
+            background-color: blue; 
+        }
+        .prev{ left:100px; }
+        .next{ right:100px; }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <div class="showImg"></div>
+        <div class="control">
+            <span class="prev">prev</span><span class="next">next</span>
+        </div>
+        <div class="indecator">
+            <ul>
+                <li class="active">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="../script/jquery-3.6.0.js"></script>
+    <script src="../script/jquery-ui.min.js"></script>
+    <script>
+    $(function(){
+        var num = 0; 
+        setInterval( autoClick, 2000 );
+        // 자동화시스템 구현 도구;
+        function autoClick(){
+            //num++; 
+            liClick(++num%5);
+        }
+        function liClick(num){
+            $('.indecator li').removeClass('active');
+            $('.indecator li').eq(num%5).addClass('active');
+        }
+        
+        $('.prev').click(function(){
+            //num--; console.log(num , " : ",  num%5);
+            liClick(num--);
+        })
+        $('.next').click(function(){
+            //num++; console.log(num , " : ",  num%5);
+            liClick(num++); 
+        })
+        
+        $('.indecator li').click(function(){
+            /*num = $(this).index(); 
+             console.log(num );
+            liClick(num);*/
+            liClick( $(this).index() )
+        })
+    })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

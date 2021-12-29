@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <style>
+        body{ overflow-y:scroll; }
+        h1{ background-color: orange; }
+    </style>
+    <script src="../script/jquery-3.6.0.js"></script>
+    <script src="../script/jquery-ui.js"></script>
+    <script>
+    $(function(){
+        /* function : 함수 = 메서드(오브젝트가 가지고 있는 함수) */
+        
+        
+        var num1 = parseInt(prompt('정수를 입력하세요.'));
+        // parseInt('5') = 5
+        var num2 = parseInt(prompt('정수를 입력하세요.'));
+        // '10'
+        
+        function adding(n1, n2){ // 파라미터 유무와는 관계없음 
+            //처리할 일 
+            // console.log( n1 + n2 );
+            return n1 + n2; 
+            // 출력형태를 다양하게 제어할 수 있음
+        }
+        
+        var reNum = adding( 5, 10 ); // 15
+        console.log(reNum)
+        reNum = adding( num1, num2 ); // 입력한 값에 따라 return 값이 달라짐 
+        //document.write( reNum );
+        reNum = adding( 15, 90); // 105
+        document.querySelector('h1').innerHTML = reNum; 
+        //$('h1').text( reNum );
+    })
+    </script>
+</head>
+<body>
+    <h1> 데이터 출력 </h1>
+</body>
+</html>
+
+
+
+

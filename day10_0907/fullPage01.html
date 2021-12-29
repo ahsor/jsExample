@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/jquery.fullpage.min.css">
+  <style>
+    section:nth-child(1){ background-color:lavender;}
+    section:nth-child(2){ background-color:lemonchiffon;}
+    section:nth-child(3){ background-color:lightpink;}
+    section:nth-child(4){ background-color:linen;}
+
+  </style>
+</head>
+<body>
+  <section id="fullpage">
+    <div class="section">section01</div>
+    <div class="section">section02</div>
+    <div class="section">section03</div>
+    <div class="section">section04</div>
+    <div class="section">section05</div>
+    <!-- 클래스명은 반드시 section이나 옵션을 이용해서 수정할 수 있음 -->
+  </section>
+
+  <script src="../script/jquery-3.6.0.min.js"></script>
+  <script src="../script/jquery.fullpage.min.js"></script>
+  <script>
+    $(function(){
+        // $('#fullpage').fullpage(); // 기본 동작이 가능 
+        /*
+        3.0버전 이상의 실행방법 : javascript 
+        new fullpage('#fullpage', {
+          //options here
+          autoScrolling:true,
+          scrollHorizontally: true
+        });
+        */
+
+        $('#fullpage').fullpage({ 
+          //options here
+          autoScrolling:true,
+          scrollHorizontally: true
+        });
+
+        //$.fn.fullpage.setAllowScrolling(false);
+        //휠을 부드럽게 넘기지 않도록 작업하기 
+    })
+
+  </script>
+</body>
+</html>

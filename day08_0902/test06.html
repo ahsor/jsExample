@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bxSlider-cdn</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/jquery-ui.min.css">
+  <!-- 
+    갤러리
+    bxslider.js
+    slickSlider.js
+    swiper.js
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  -->
+  <script src="../script/jquery-3.6.0.min.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  <style>
+    
+    .first-slider div{ height: 300px; text-align: center;}
+    
+    .bx-controls .bx-controls-direction{ 
+      position: absolute; top:16%;  width:100%; 
+    }
+    .bx-controls .bx-prev{ width: 20px; height: 20px; 
+      background-color: red; position:absolute; left: 50px; 
+      color: transparent; 
+    }
+    
+    .bx-controls .bx-next{ width: 20px; height: 20px; 
+      background-color: red; position:absolute; right: 50px; 
+      color: transparent; 
+    }
+    .bx-pager{ display: flex; justify-content: center; 
+      position: relative; bottom: 20px;
+    }
+    .bx-pager .bx-pager-item a{ display: block; width: 100px; height: 10px;
+      background-color: orange; color:transparent; 
+      margin: 5px;
+    }
+    .bx-pager .bx-pager-item a.active{ background-color: red;}
+
+    /* 내가 원하는 디자인 = custom design 으로 변경 가능 */
+  </style>
+</head>
+<body>
+  <div class="my-slider">
+    <div class="first-slider  slider">
+      <div><img src="https://app-storage-edge-002.cafe24.com/bannermanage2/mylady333/2021/09/01/2f8a2e86daa4976ce064ed10b2a05727.gif" alt=""></div>
+      <div><img src="https://app-storage-edge-002.cafe24.com/bannermanage2/mylady333/2021/09/01/e4dbb65225841a9d69b85a172572af7f.jpg" alt=""></div>
+      <div><img src="https://app-storage-edge-002.cafe24.com/bannermanage2/mylady333/2021/09/01/778abddc97d813d61a1805092c39703b.jpg" alt=""></div>
+      <div><img src="https://app-storage-edge-002.cafe24.com/bannermanage2/mylady333/2021/09/01/84661a24eaf568decf1a26a46a8bf402.gif" alt=""></div>
+    </div>
+  </div>
+
+    <script>
+      $(function(){
+        $('.slider').bxSlider();
+      })
+      /*
+      $(document).ready(function(){
+        $('.slider').bxSlider();
+      });
+      */
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/jquery-ui.min.css">
+  <!-- 
+    시간관리, setInterval()
+    setTimeout() : 지정된 시간에 단 한번 지정된 함수 호출
+    clearTimeout() : setTimeout 지정된 시간을 지울때 
+    setInterval() : 지정된 시간마다 여러번 반복해서 지정된 함수 호출 
+    clearInterval() : setInterval로 지정된 시간을 제거
+   -->
+  <script src="../script/jquery-3.6.0.min.js"></script>
+  <style>
+    .box{ width:200px; height: 200px; position: relative;
+      margin: 100px;
+    }
+    .box>div{ width:200px; height: 200px; position: absolute;}
+    .box>div:nth-child(1){ background-color: red;}
+    .box>div:nth-child(2){ background-color: green;}
+    .box>div:nth-child(3){ background-color: blue;}
+    .box>div:nth-child(4){ background-color: yellow;}
+    .box>div:nth-child(5){ background-color: orange;}
+    .box>div:nth-child(6){ background-color: purple;}
+    .box>div:nth-child(7){ background-color: skyblue;}
+    .box>div:nth-child(8){ background-color: black;}
+    .box>div:nth-child(9){ background-color:brown;}
+    .box>div:nth-child(10){ background-color:cyan;}
+
+  </style>
+</head>
+<body>
+    <div class="box">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <script>
+    // animate({ }, speed, easing, callback )  
+    // animate처리를 끝낸 후 할일 
+    
+    $('.box>div').eq(9).delay(2000)
+    .animate({'left': '100px', 'top':'-100px', 'opacity': 0}, 400, 
+      function(){
+        $('.box>div').eq(8).delay(2000)
+          .animate({'left': '100px', 'top':'-100px', 'opacity': 0}, 400,
+
+            function(){
+              $('.box>div').eq(7).delay(2000)
+                .animate({'left': '100px', 'top':'-100px', 'opacity': 0}, 400, );
+            }
+          );
+      }
+    );
+    
+    
+
+
+    </script>
+</body>
+</html>

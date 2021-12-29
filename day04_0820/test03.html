@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>조건제어문</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+    
+    </style>
+</head>
+<body>
+    
+    <script>
+    /*
+        방법3 : 처리할일이 여러 개이고 여러개 중에 어떤일을 처리할지 결정
+        if(조건식1){ 조건식1이 true인 경우 처리할 문장 }
+        else if(조건식2){ 조건식1이 false, 조건식2는 true인경우 처리할 문장 }
+        else if(조건식3){ 조건식1,조건식2 이 false, 조건식3는 true인경우 처리할 문장 }
+        .....
+        else{ 조건식n개가 모두 false일때 처리할 일  }
+    */
+       var num = prompt('점수를 입력하세요.');
+       if( num >= 90 ){ console.log( 'A 학점입니다.' ); }
+       else if( num >= 80 ){ console.log( 'B 학점입니다.' ); }
+       else if( num >= 70 ){ console.log( 'C 학점입니다.' ); }
+       else if( num >= 60 ){ console.log( 'D 학점입니다.' ); }
+       else{ console.log( 'F 학점입니다.' ); }
+        
+       console.log('조건식에 상관없이 출력');
+    </script>
+</body>
+</html>
+
+
+
+

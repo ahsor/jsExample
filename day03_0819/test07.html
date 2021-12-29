@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .gallery{ width:600px; margin: 100px; }
+        .btn{ display: flex; }
+        .btn a{ display: block; width:200px; height: 30px; 
+            text-align: center; line-height: 30px; 
+            border:1px solid black; 
+        }
+        .bigImg{ position:relative; }
+        .bigImg>div{ position:absolute; width: 600px; height: 300px; 
+            display: none; 
+        }
+        .bigImg>div:nth-child(1){background-color: skyblue; display: block; }
+        .bigImg>div:nth-child(2){background-color: yellow; }
+        .bigImg>div:nth-child(3){background-color: orange; }
+    </style>
+</head>
+<body>
+   <div class="gallery">
+       <div class="btn">
+           <a href="#skyblue">skyblue</a>
+           <a href="#yellow">yellow</a>
+           <a href="#orange">orange</a>
+       </div>
+       <div class="bigImg">
+           <div id="skyblue"></div>
+           <div id="yellow"></div>
+           <div id="orange"></div>
+       </div>
+   </div>
+   
+    <script src="../script/jquery-3.6.0.js"></script>
+    <script>
+    $(function(){
+       /* btn을 클릭시마다 색상에 해당하는 div을 보이도록 하세요. 
+            fadeIn()/fadeOut() 
+       */ 
+       var $btn = $('.btn a');
+       var $img = $('.bigImg div');
+       $btn.eq(0).click(function(){
+           $img.fadeOut();
+           $img.eq(0).fadeIn();
+       }) 
+       $btn.eq(1).click(function(){
+           $img.fadeOut();
+           $img.eq(1).fadeIn();
+       }) 
+       $btn.eq(2).click(function(){
+           $img.fadeOut();
+           $img.eq(2).fadeIn();
+       })  
+    })
+    </script>
+</body>
+</html>
+
+
+
+
+
+

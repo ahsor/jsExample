@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <style>
+        body{ overflow-y:scroll; }
+        
+    </style>
+    <script src="../script/jquery-3.6.0.js"></script>
+    <script src="../script/jquery-ui.js"></script>
+    <script>
+    $(function(){
+        /* function : 함수 = 메서드(오브젝트가 가지고 있는 함수) */
+        
+        //function(){}
+        // 이름 없는 함수 = anomymous function
+        var num1 = parseInt(prompt('정수를 입력하세요.'));
+        // parseInt('5') = 5
+        var num2 = parseInt(prompt('정수를 입력하세요.'));
+        // '10'
+        
+        function adding(n1, n2){ // 파라미터 = 아그먼트 = argument
+            //처리할 일 
+            console.log( n1 + n2 );
+        }
+        
+        adding( 5, 10 );
+        adding( num1, num2 );
+        adding( 15, 90);
+    })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+
+

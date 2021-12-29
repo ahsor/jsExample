@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scroll</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .btn{ position: fixed; left:100px; top:100px; }    
+        .btn button{ padding: 1em; }
+        section{ height: 4000px; width: 50%; background-color: orange;
+            line-height: 4em;
+        }
+    </style>
+</head>
+<body>
+   <div class="btn">
+           <button>1000</button>
+           <button>1500</button>
+           <button>2500</button>
+           <button>3000</button>
+    </div>
+    <section>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quod, reiciendis voluptatem perferendis animi tempora enim voluptatum illo. Id error dicta est, alias eius aperiam vel maxime fuga commodi illo!
+    </section>
+    
+    <script src="../script/jquery-3.6.0.js"></script>
+    <script src="../script/jquery-ui.min.js"></script>
+    <script>
+    $(function(){
+        $(window).scroll(function(){
+            var st = $(this).scrollTop();
+            console.log( st )
+        })
+        
+        $('.btn button').eq(0).click(function(){
+            $(window).scrollTop(1000);
+        })
+        $('.btn button').eq(1).click(function(){
+            $(window).scrollTop(1500);
+        })
+        $('.btn button').eq(2).click(function(){
+            $(window).scrollTop(2500);
+        })
+        $('.btn button').eq(3).click(function(){
+            $(window).scrollTop(3000);
+        })
+        
+    })
+    </script>
+</body>
+</html>

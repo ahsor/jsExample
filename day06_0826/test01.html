@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <style>
+        body{ overflow-y:scroll; }
+        h1{ padding:1em; }
+        section{ height: 500px; background-color: skyblue; 
+        text-align: center; line-height: 500px; font-size: 100px;
+        font-weight: 900; color:#fff;
+        }
+        /*section:hover .contents{ transform:rotate(20deg);}*/
+    </style>
+    <script src="../script/jquery-3.6.0.js"></script>
+    <script src="../script/jquery-ui.js"></script>
+    <script>
+    $(function(){
+        $('section').mouseover(function(){
+            $(this).find('.contents').css({ 'transform':'rotate(20deg)'});
+        }).mouseout(function(){
+            $(this).find('.contents').css({ 'transform':'rotate(0deg)'});
+        })
+        /*
+        animate({ 속성:숫자값}, speed, easing, callback)
+        */
+    })
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Sample</h1>
+    </header>
+    <section>
+        <div class="contents">Creative jQuery!!</div>
+    </section>
+    <footer>
+        <address> jemicom_it@naver.com</address>
+    </footer>
+</body>
+</html>
+
+
+
+

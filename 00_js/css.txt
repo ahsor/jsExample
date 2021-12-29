@@ -1,0 +1,22 @@
+1. css 프레임워크
+Semantic UI 
+https://semantic-ui.com/
+materializecss
+https://materializecss.com/
+부트스트랩
+
+2. css architecture
+css 재사용을 위한 방법론(네이밍 기법) 
+BEM, SMACSS, OOCSS
+https://wit.nts-corp.com/2015/04/16/3538 3가지 방법론 비교
+https://abcdqbbq.tistory.com/75  웹접근성에 대한 자세한 설명
+
+https://en.bem.info/methodology/key-concepts/
+https://naradesign.github.io/ grid, wcag 명세
+https://naradesign.github.io/bem-by-example.html  
+https://webclub.tistory.com/category/StyleSheet/SASS%E3%86%8DSCSS : BEM, SASS
+
+SMACSS
+
+3. css preprocessor
+ 

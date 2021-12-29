@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      li {
+        list-style: none;
+      }
+      .gallery {
+        width: 600px;
+        height: 400px;
+      }
+      .indecator > ul {
+        display: flex;
+        column-gap: 2px;
+        height: 400px;
+        /* 이전이후 버튼이 클리될 공간 필요하여 width, height등 재배치 필요 */
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        line-height: 1em;
+      }
+      .indecator a {
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-color: lightblue;
+      }
+      .indecator a.active {
+        background-color: rebeccapurple;
+      }
+
+      /* control btn 추가 디자인 */
+      .gallery {
+        position: relative;
+      }
+      .controls {
+        position: absolute;
+        z-index: -1; /* 인디케이터가 출력되지 않은 문제로 레이어 순서 신경 써야 함 */
+        bottom: -50px; /* 이전 이후 버튼을 클릭되게 하기 위해 다른 곳에 배치 */
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        /* 이전 이후 버튼을 좌우 배치 */
+      }
+      .controls span {
+        display: block;
+        width: 30px;
+        height: 30px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>slider의 prev, next btn</h1>
+    <hr />
+    <div class="gallery">
+      <div class="indecator">
+        <ul>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+        </ul>
+      </div>
+      <div class="controls">
+        <span class="prev">이전</span><span class="next">이후</span>
+      </div>
+    </div>
+    <script>
+      var btn = document.querySelector(".gallery");
+      var indecator = document.querySelectorAll(".indecator a");
+      var index = 0;
+      var currentIndecator = indecator[index];
+      currentIndecator.classList.add("active");
+
+      function indecatorClick(ev) {
+        ev.preventDefault();
+        if (currentIndecator) {
+          currentIndecator.classList.remove("active");
+        }
+        // console.log(ev.target);
+        ev.target.classList.add("active");
+        currentIndecator = ev.target;
+      }
+      btn.addEventListener("click", indecatorClick);
+
+      var prev = document.querySelector(".prev");
+      var next = document.querySelector(".next");
+      prev.addEventListener("click", indecatorPrev);
+      next.addEventListener("click", indecatorNext);
+
+      function indecatorPrev(ev) {
+        ev.preventDefault();
+        if (index <= 0) index = 5;
+        index--; //  console.log(index);
+        if (currentIndecator) {
+          currentIndecator.classList.remove("active");
+        }
+        indecator[index % 5].classList.add("active");
+        // console.log(indecator[index % 5]);
+        currentIndecator = indecator[(index + 1) % 5];
+      }
+
+      function indecatorNext(ev) {
+        ev.preventDefault();
+        if (index >= 5 - 1) index = -1;
+
+        index++;
+        //console.log(index);
+        if (currentIndecator) {
+          currentIndecator.classList.remove("active");
+        }
+        indecator[index % 5].classList.add("active");
+        //console.log(indecator[index % 5]);
+
+        currentIndecator =
+          indecator[(index % 5) - 1 == -1 ? 4 : (index % 5) - 1];
+        // 5번 삭제처리 안됨 for 돌리면 처리됨
+        // 0 1 2 3 4 -1 = -1 0 1 2 3  보정필요
+      }
+    </script>
+  </body>
+</html>

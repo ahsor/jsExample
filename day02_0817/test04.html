@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>지우기와관련된함수</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        div{ border:1px solid black; margin-bottom: 1em; 
+            padding: 1em; 
+        }
+    </style>
+    <script src="../script/jquery-3.6.0.js"></script>
+    <script>
+    $(function(){
+        $('#appendWrite').empty();
+        /* 선택자의 내용물을 지우기 */
+        $('#prependWrite').remove();
+        /* 선택자 자체를 지우기 */
+    })
+    </script>
+</head>
+<body>
+    <div id="appendWrite">middle</div>
+    <div id="prependWrite">middle</div>
+    <div id="afterWrite">middle</div>
+    <div id="beforeWrite">middle</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

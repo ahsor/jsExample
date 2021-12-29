@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="./slick/slick.css">
+  <link rel="stylesheet" href="./slick/slick-theme.css">
+  <style>
+    body{ background-color: skyblue;  }
+  
+    .smallSlider{ width: 600px; height: 300px; margin: auto;}
+    .smallSlider li{ height: 300px;}
+
+  </style>
+</head>
+<body>
+  <div class="smallSlider">
+    <ul class="box-slider">
+      <li><img src="http://placekitten.com/600/300" alt=""></li>
+      <li><img src="http://placekitten.com/600/301" alt=""></li>
+      <li><img src="http://placekitten.com/601/302" alt=""></li>
+    </ul>
+  </div>
+
+  <script src="../script/jquery-3.6.0.min.js"></script>
+  <script src="./slick/slick.min.js"></script>
+  <script>
+    $(function(){
+      $('.box-slider').slick({
+          autoplay:true,
+          autoplaySpeed:3000,
+      });
+
+
+    })
+
+  </script>
+</body>
+</html>

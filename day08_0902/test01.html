@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/jquery-ui.min.css">
+  <!-- 
+    시간관리, setInterval()
+    setTimeout() : 지정된 시간에 단 한번 지정된 함수 호출
+    clearTimeout() : setTimeout 지정된 시간을 지울때 
+    setInterval() : 지정된 시간마다 여러번 반복해서 지정된 함수 호출 
+    clearInterval() : setInterval로 지정된 시간을 제거
+   -->
+  <script src="../script/jquery-3.6.0.min.js"></script>
+  
+
+</head>
+<body>
+    <button> timer 삭제 </button>
+
+    <script>
+      var timer = setTimeout(
+        function(){ 
+        alert('5%할인 쿠폰을 발송하였습니다.'); 
+        console.log('콘솔에도 출력');
+      }, 3000);
+  
+      var timer2 = setTimeout(stoFun, 5000);
+  
+      function stoFun(){ 
+        alert('2번째 5%할인 쿠폰을 발송하였습니다.'); 
+        console.log('2번째 콘솔에도 출력');
+        clearTimeout(timer2);
+      }
+  
+      function clearFun(){
+        clearTimeout(timer);
+        console.log( 'timer 삭제');
+      }
+  
+      $('button').click(function(){
+          clearFun();
+      })
+    </script>
+</body>
+</html>

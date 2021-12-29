@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>더보기</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <style>
+      body {
+        overflow-y: scroll;
+      }
+      /* 세로 스크롤바가 생성되었다 없어졌다 하면 움찔거리므로 
+           세로 스크롤바는 항상 생성되도록 함 
+        */
+      .showHide {
+        width: 800px;
+        margin: auto;
+        padding-top: 1em;
+      }
+      .showHideBtn {
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        border: 1px solid black;
+      }
+      .menuPanel {
+        height: 300px;
+        background-color: purple;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="showHide">
+      <div class="showHideBtn">더보기</div>
+      <div class="menuPanel"></div>
+    </div>
+    <script>
+      var showHideBtn = document.querySelector(".showHideBtn");
+      var menuPanel = document.querySelector(".menuPanel");
+      showHideBtn.addEventListener("mouseover", function () {
+        menuPanel.style.display = "block";
+        this.innerHTML = "접기";
+      });
+
+      showHideBtn.addEventListener("mouseout", function () {
+        menuPanel.style.display = "none";
+        this.innerHTML = "더보기";
+      });
+
+      /*
+      $(function () {
+        $(".showHideBtn").mouseover(function () {
+          $(".menuPanel").css("display", "block");
+          $(".showHideBtn").text("접기");
+        });
+
+        $(".showHideBtn").mouseout(function () {
+          $(".menuPanel").css("display", "none");
+          $(".showHideBtn").text("더보기");
+        });
+      });
+      */
+    </script>
+  </body>
+</html>

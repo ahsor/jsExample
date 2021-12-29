@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <!-- Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  <script src="../script/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <style>
+    body{ background-color: skyblue;  }
+    .mainSlider{ width: 1200px; height: 300px; margin: auto; }
+    .mainSlider>div>div{ height: 300px;}
+    .mainSlider>div>div:nth-child(1){background-color: pink;}
+    .mainSlider>div>div:nth-child(2){background-color: blue;}
+    .mainSlider>div>div:nth-child(3){background-color: green;}
+
+    .smallSlider{ width: 600px; height: 300px; margin: auto;}
+    .smallSlider li{ height: 300px;}
+    .smallSlider li:nth-child(1){background-color: pink;}
+    .smallSlider li:nth-child(2){background-color: blue;}
+    .smallSlider li:nth-child(3){background-color: green;}
+  </style>
+</head>
+<body>
+  <div class="mainSlider">
+    <div class="my-slider">
+      <div>your content1</div>
+      <div>your content2</div>
+      <div>your content3</div>
+    </div>
+  </div>
+  <div class="smallSlider">
+    <ul class="box-slider">
+      <li>box1</li>
+      <li>box2</li>
+      <li>box3</li>
+    </ul>
+  </div>
+  <script>
+    $(function(){
+      $('.my-slider').slick({
+          autoplay:true
+      });
+ 
+      $('.box-slider').slick({
+          autoplay:true,
+          autoplaySpeed:5000
+      });
+
+
+    })
+
+  </script>
+</body>
+</html>

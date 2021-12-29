@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tabs</title>
+    <style>
+      .thisLink {
+        color: red;
+      }
+      .active {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="tabs">
+      <ul>
+        <li><a href="#tabs-1" class="thisLink">Nunc tincidunt</a></li>
+        <li><a href="#tabs-2">Proin dolor</a></li>
+        <li><a href="#tabs-3">Aenean lacinia</a></li>
+      </ul>
+    </div>
+    <script>
+      //여러개 클래스 add
+      var tab = document.querySelector("#tabs a");
+      // querySelectorAll은 배열을 리턴하므로 배열처리하여 사용해야함
+      tab.classList.add("active", "on", "ba");
+
+      tab.addEventListener("click", function () {
+        var classes = tab.className.split(" "); // 클래스명을 공백으로 분리하여 배열로 저장
+        console.log(classes);
+        var index = classes.indexOf("active");
+        console.log(index);
+        if (index == -1) {
+          classes.push("active"); // 클래스 추가
+        } else {
+          classes.splice(index, 1); // 클래스 제거
+        }
+
+        this.className = classes.join(" "); // 공백으로 연결
+      });
+    </script>
+  </body>
+</html>

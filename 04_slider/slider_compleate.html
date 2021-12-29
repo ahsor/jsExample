@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      li {
+        list-style: none;
+      }
+      .carousel-container {
+        width: 60%;
+        height: 400px;
+        margin: auto;
+      }
+      .carousel-slide{ display: flex;}
+      .carousel-slide img{ width:100%; }
+
+      /* .indecator > ul {
+        display: flex;
+        column-gap: 2px;
+        justify-content: center;
+        /* height: 400px;
+        align-items: center; */
+        text-align: center;
+        line-height: 1em;
+      }
+      .indecator a {
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-color: lightblue;
+      }
+      .indecator a.active {
+        background-color: rebeccapurple;
+      }
+      /* sliderImg 디자인 */
+      .sliderImg {
+        position: relative;
+        z-index: -1;
+      }
+      .sliderImg > img {
+        position: absolute;
+        display: none;
+      }
+      .sliderImg > img.active {
+        display: block;
+        transform: ;
+        translate: ;
+      } */
+    </style>
+  </head>
+  <body>
+    <h1>slider의 인디케이터</h1>
+    <hr />
+    <div class="carousel-container">
+      <div class="carousel-slide">
+        <img src="http://placekitten.com/600/404" id='lastClone' alt="" />
+        <img src="http://placekitten.com/600/450" alt="" />
+        <img src="http://placekitten.com/600/411" alt="" />
+        <img src="http://placekitten.com/600/432" alt="" />
+        <img src="http://placekitten.com/600/443" alt="" />
+        <img src="http://placekitten.com/600/404" alt="" />
+        <img src="http://placekitten.com/600/400" id='firstClone' alt="" />
+      </div>
+
+      <div class="control">
+          <button id="prevBtn">Prev</button>
+          <button id="nextBtn">Next</button>
+        </div>
+      <div class="indecator">
+        <ul>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      const caroselSlide = document.querySelector('.carousel-slide');
+      const caroselImages = document.querySelectorAll('.carousel-slide img');
+      // forEach 사용할 수 있음
+      // caroselImages.forEach(function(img){
+      //   console.log(img)
+      // })
+      const imgs = document.getElementsByTagName('img');
+      // 유사 배열로 forEach error
+      // imgs.forEach(img => {
+      //   console.log(img)
+      // });
+      const prevBtn = document.querySelector('#prevBtn');
+      const nextBtn = document.querySelector('#nextBtn');
+
+      let counter = 1; 
+      const size = caroselImages[0].clientWidth; 
+      //caroselSlide.style.transform = `translateX(${-size*counter})`;
+      caroselSlide.style.transform = 'translateX('+(-size*counter)+'px)';
+
+      nextBtn.addEventListener('click', function(){
+          if( counter>=caroselImages.length-1 ) return; 
+          caroselSlide.style.transition = "transform 0.4s ease-in-out";
+          counter++ ;
+          
+          //caroselSlide.style.transform = `translateX(${-size*counter})`;
+          caroselSlide.style.transform = 'translateX('+(-size*counter)+'px)';
+      })
+      prevBtn.addEventListener('click', function(){
+          if( counter<=0 ) return; 
+          caroselSlide.style.transition = "transform 0.4s ease-in-out";
+          counter-- ;
+          
+          //caroselSlide.style.transform = `translateX(${-size*counter})`;
+          caroselSlide.style.transform = 'translateX('+(-size*counter)+'px)';
+      })
+
+      caroselSlide.addEventListener('transitionend', ()=>{
+          console.log('end');
+          if(caroselImages[counter].id === 'lastClone'){
+              carouselSlide.style.transition = 'none';
+              counter = caroselImages.length - 2; 
+              caroselSlide.style.transform = 'translateX('+(-size*counter)+'px)';
+          }
+          if(caroselImages[counter].id === 'firstClone'){
+              carouselSlide.style.transition = 'none';
+              counter = caroselImages.length - counter; 
+              caroselSlide.style.transform = 'translateX('+(-size*counter)+'px)';
+          }
+      })
+    </script>
+  </body>
+</html>

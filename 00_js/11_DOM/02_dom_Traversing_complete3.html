@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>공백인식</title>
+  </head>
+  <body>
+    <div id="page">
+      <h1 id="header">목록</h1>
+      <h2>선택할 식료품</h2>
+      <ul>
+        <li id="one" class="hot"><em>신선한</em>무화과</li>
+        <li id="two" class="hot">애플망고</li>
+        <li id="three" class="hot">발사믹식초</li>
+        <li id="four">시금치</li>
+      </ul>
+    </div>
+    <script>
+      var list = document.querySelectorAll("li[id]");
+      console.log(list.length);
+      // 텍스트 노드로 인한 null 출력을 방지하기 위하여 다음과 같이 변경할 수 있음
+      if (list[2].previousSibling != 1) {
+        console.log(list[2].previousSibling.previousSibling);
+      } else {
+        console.log(list[2].previousSibling);
+      }
+
+      var ch = document.querySelector("ul");
+      if (ch.firstChild != 1) {
+        console.log(ch.firstChild.nextSibling);
+      } else {
+        console.log(ch.firstChild);
+      }
+      // 또는 배열에 모든 노드를 다시 저장한 후 인덱스로 꺼내 사용한다.
+
+      var em = document.querySelector("em");
+      console.log(em);
+      var text = em.nodeValue;
+      console.log(`em의 텍스트노드 ${list[0].nodeValue}`);
+      console.log(`ul의 텍스트노드 ${ch.nodeValue}`);
+      console.log(ch);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       var person = [{name:'kim', age:30}, {name:'hong', age:40}];
+       person.push({name:'park', age:50});
+
+       console.log('length = ', person.length);
+       console.dir(person.pop())
+       console.log('length = ', person.length, person.pop());
+       console.log('length = ', person.length);
+       
+       var p = person.pop();
+       console.log('length = ', person.length);
+       console.log(p);
+    </script>
+</body>
+</html>

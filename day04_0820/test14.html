@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../script/jquery-3.6.0.min.js"></script>
+    <script>
+    $(function(){
+        /* li를 클릭하면 */
+        /*1. .red 를 배경색을 빨강색으로 지정하세요. */
+        $('.red').click(function(){
+            $(this).css('background-color','red');
+        })
+        /*2. .prev 를 이전 li을 파랑색으로 지정하세요. */
+        $('.prev').click(function(){
+            $(this).prev().css('background-color','blue');
+        })
+        /*3. .next 를 다음 li을 주황색으로 지정하세요. */
+        $('.next').click(function(){
+            $(this).next().css('background-color','orange');
+        })
+        /*4. .nextAll 를 다음 형제를 문자를 모두 보라색으로 지정하세요. */
+        $('.nextAll').click(function(){
+            $(this).nextAll().css('background-color','purple');
+        })
+        /*5. sibilings 를 이용해서 테두리를 지정하세요.*/
+        $('.siblings').click(function(event){
+            event.preventDefault();
+            $(this).siblings().css('color','green');
+        })
+        
+        
+        
+    })
+    </script>
+</head>
+<body>
+    <ul>
+        <li class="red">red</li>
+        <li>box2</li>
+        <li class="prev">prev</li>
+        <li class="next">next</li>
+        <li>box5</li>
+        <li class="nextAll">nextAll</li>
+        <li>box7</li>
+        <li>box8</li>
+        <li>box9</li>
+        <li class="siblings">siblings</li>
+    </ul>
+</body>
+</html>

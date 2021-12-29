@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/jquery.fullpage.min.css">
+  <style>
+    header{ position: fixed; z-index: 99; width:100%;
+      background-color: rgba(255, 0,0,0.5); top:0; left:0;
+    }
+    #myMenu{ display: flex;}
+    #myMenu a{ display: block; padding: 1em;}
+    section:nth-child(1){ background-color:lavender;}
+    section:nth-child(2){ background-color:lemonchiffon;}
+    section:nth-child(3){ background-color:lightpink;}
+    section:nth-child(4){ background-color:linen;}
+    section{ text-align: center;}
+  </style>
+</head>
+<body>
+  <section id="fullpage">
+    <div class="section" data-tooltip="page01">section01</div>
+    <div class="section" data-tooltip="page02">section02</div>
+    <div class="section" data-tooltip="page03">section03</div>
+    <div class="section" data-tooltip="page04">section04</div>
+    <div class="section" data-tooltip="page05">section05</div>
+    <!-- 클래스명은 반드시 section이나 옵션을 이용해서 수정할 수 있음 -->
+  </section>
+  <header>
+    <nav class="lnb">
+      <ul id="myMenu">
+        <li data-menuanchor="section01" class="active"><a href="#section01">First section</a></li>
+        <li data-menuanchor="section02"><a href="#section02">Second section</a></li>
+        <li data-menuanchor="section03"><a href="#section03">Third section</a></li>
+        <li data-menuanchor="section04"><a href="#section04">Fourth section</a></li>
+        <li data-menuanchor="section05"><a href="#section05">Fourth section</a></li>
+      </ul>
+    </nav>
+  </header>
+  <script src="../script/jquery-3.6.0.min.js"></script>
+  <script src="../script/jquery.fullpage.min.js"></script>
+  <script>
+    $(function(){
+        $('#fullpage').fullpage({ 
+          //options here
+          autoScrolling:true,
+          scrollHorizontally: true,
+          anchors: ['section01', 'section02', 'section03', 'section04', 'section05'],
+	        menu: '#myMenu'
+        });
+
+    })
+
+  </script>
+</body>
+</html>

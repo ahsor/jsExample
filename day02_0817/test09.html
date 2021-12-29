@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>fadein/out</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <style>
+      .bottomTab {
+        width: 700px;
+        margin: 100px;
+      }
+      .slide {
+        position: relative;
+        height: 400px;
+      }
+      .slide > li {
+        width: 100%;
+        height: 400px;
+        position: absolute;
+        transition: 2s;
+        /* opacity를 트랜지션 시켜서 애니메이션 되도록 함 */
+      }
+      .slide > li:nth-child(1) {
+        background-color: skyblue;
+      }
+      .slide > li:nth-child(2) {
+        background-color: orange;
+      }
+      .slide > li:nth-child(3) {
+        background-color: yellow;
+      }
+      .btn {
+        display: flex;
+        position: relative;
+      }
+      .btn > li {
+        width: 33.333333%;
+        height: 30px;
+        border: 1px solid black;
+      }
+    </style>
+    <script src="../script/jquery-3.6.0.js"></script>
+    <script>
+      $(function () {
+        $(".btn li:nth-child(1)").click(function () {
+          $(".slide li:nth-child(1)").css("opacity", "1");
+          $(".slide li:nth-child(2)").css("opacity", "0");
+          $(".slide li:nth-child(3)").css("opacity", "0");
+        });
+        $(".btn li:nth-child(2)").click(function () {
+          $(".slide li:nth-child(1)").css("opacity", 0);
+          $(".slide li:nth-child(2)").css("opacity", 1);
+          $(".slide li:nth-child(3)").css("opacity", 0);
+        });
+        $(".btn li:nth-child(3)").click(function () {
+          $(".slide li:nth-child(1)").css("opacity", 0);
+          $(".slide li:nth-child(2)").css("opacity", 0);
+          $(".slide li:nth-child(3)").css("opacity", 1);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="bottomTab">
+      <ul class="slide">
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <ul class="btn">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>collapse</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .accordion{ width:800px; margin: 100px; border:1px solid #aaa;
+            border-radius: 5px; overflow: hidden; 
+        }
+        .title{ background-color:dodgerblue; color:#fff; 
+            padding: 0.5em; 
+        }
+        .content{ border-radius: 10px; 
+            padding:1em; 
+        }
+    </style>
+    <script src="../script/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="accordion">
+        <div class="title">accordion Title1</div>
+        <div class="content"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint maiores laudantium temporibus aut, rerum praesentium magni assumenda facere. Error, itaque sequi, debitis ullam deserunt distinctio quod nemo a impedit totam.</div>
+        <div class="title">accordion Title2</div>
+        <div class="content"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint maiores laudantium temporibus aut, rerum praesentium magni assumenda facere. Error, itaque sequi, debitis ullam deserunt distinctio quod nemo a impedit totam.</div>
+        <div class="title">accordion Title3</div>
+        <div class="content"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint maiores laudantium temporibus aut, rerum praesentium magni assumenda facere. Error, itaque sequi, debitis ullam deserunt distinctio quod nemo a impedit totam.</div>
+        
+    </div>
+    <script>
+    $(function(){
+        //$('.content').slideUp();
+        
+        $('.title').eq(0).click(function(){
+            $('.content').slideUp();
+            $('.content').eq(0).slideDown();
+        })
+        $('.title').eq(1).click(function(){
+            $('.content').slideUp();
+            $('.content').eq(1).slideDown();
+        })
+        $('.title').eq(2).click(function(){
+            $('.content').slideUp();
+            $('.content').eq(2).slideDown();
+        })
+        
+    })
+    </script>
+</body>
+</html>
+
+
+
+
