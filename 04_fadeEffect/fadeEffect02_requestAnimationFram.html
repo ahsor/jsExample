@@ -67,7 +67,7 @@
             [...imgs].forEach((img)=>{
                 img.classList.remove('active');
             })
-            imgs[++counter%5 * 0.1].classList.add('active');
+            imgs[counter%5].classList.add('active');
             indecatorA();
             requestAnimationFrame(fadeInOut);
         }

@@ -1,4 +1,7 @@
-let m = require("./module");
+import User from './user.js'
 
-console.log(m.abs(-273));
-console.log(m.circleArea(20));
+const user = new User('kim', 11);
+console.log(user);
+
+// 10_module 에서 오류 
+// 13_express 에서 실행 

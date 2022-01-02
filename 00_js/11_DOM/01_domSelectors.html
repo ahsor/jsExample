@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{ display:block;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">CONTENT1</div>
+        <div class="content">CONTENT2</div>
+        <div class="content">CONTENT3</div>
+        <div class="content">CONTENT4</div>
+        <div class="content">CONTENT5</div>
+    </div>
+    <form action="">
+        <input type="text">
+        <input type="checkbox">
+        <input type="radio">
+        <input type="date">
+    </form>
+    <script>
+        const container1 = document.getElementsByClassName('content');
+        const container2 = document.querySelectorAll('.content');
+        const input1 = document.getElementsByTagName('input');
+        const input2 = document.querySelectorAll('input');
+
+        console.log(container1); // HTMLCollector
+        console.log(container2); // NodeList
+        console.log(input1); // HTMLCollector
+        console.log(input2); // NodeList
+
+        // console로 proto타입을 확인해보면 
+        // HTMLCollector는 forEach를 사용할 수 없고 
+        // NodeList는 forEach를 사용할 수 있다. 
+
+        container2.forEach((item, i)=>{
+            console.log(i, item);
+        })
+        
+        input2.forEach((item, i)=>{
+            console.log(i, item);
+        })
+
+    </script>
+</body>
+</html>

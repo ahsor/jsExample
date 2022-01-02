@@ -26,3 +26,4 @@ export function circleArea(radius) {
 
 
 // export { circleArea, abs} ;
+// 한꺼번에 export 할수도 있고 
