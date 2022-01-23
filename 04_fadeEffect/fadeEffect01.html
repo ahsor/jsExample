@@ -53,6 +53,7 @@
 
         indexBtn.addEventListener('click', function(event){
             let index = event.target.firstChild.nodeValue;
+            //링크 value를 가져와서 값을 구함
             console.log( index );
             [...img].forEach((img)=>{
                 img.classList.remove('active');
